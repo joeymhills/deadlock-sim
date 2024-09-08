@@ -1,0 +1,128 @@
+{
+    "Basic Magazine": {
+        "name": "Basic Magazine",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "moveSpeed": ["*", 1.24],
+            "stamina": ["*", 1.15]
+        },
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Close Quarters": {
+        "name": "Close Quarters",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletSheild": ["*", 1.15]
+        },
+        "passives": {
+            "condition": "range",
+            "range": 15,
+            "bulletDamage": ["*", 1.25]
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Close Quarters": {
+        "name": "Close Quarters",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletSheild": ["*", 1.15]
+        },
+        "passives": {
+            "condition": "range",
+            "range": 15,
+            "bulletDamage": ["*", 1.25]
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Close Quarters": {
+        "name": "Close Quarters",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletSheild": ["*", 1.15]
+        },
+        "passives": {
+            "condition": "range",
+            "range": 15,
+            "bulletDamage": ["*", 1.25]
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Close Quarters": {
+        "name": "Close Quarters",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletSheild": ["*", 1.15]
+        },
+        "passives": {
+            "condition": "range",
+            "range": 15,
+            "bulletDamage": ["*", 1.25]
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Close Quarters": {
+        "name": "Close Quarters",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletSheild": ["*", 1.15]
+        },
+        "passives": {
+            "condition": "range",
+            "range": 15,
+            "bulletDamage": ["*", 1.25]
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Close Quarters": {
+        "name": "Close Quarters",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletSheild": ["*", 1.15]
+        },
+        "passives": {
+            "condition": "range",
+            "range": 15,
+            "bulletDamage": ["*", 1.25]
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Close Quarters": {
+        "name": "Close Quarters",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletSheild": ["*", 1.15]
+        },
+        "passives": {
+            "condition": "range",
+            "range": 15,
+            "bulletDamage": ["*", 1.25]
+        },
+        "actives": {},
+        "debuffs": {}
+    }
+}
+  
