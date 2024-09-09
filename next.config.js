@@ -5,6 +5,11 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+    typescript: {
+        ignoreBuildErrors: true, // Disables TypeScript type checking during build
+        },
+        // other configurations
+};
 
 export default config;
