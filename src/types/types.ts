@@ -22,10 +22,13 @@ export interface HeroAttributes {
   spiritShield?: number;
   abilityPoints?: number;
   spiritScaling?: [string, number];
-  weaponInventory: [],
-  vitalityInventory: [],
-  spiritInventory: [],
-  flexInventory: []
+  bulletDamagePerLevel?: number;
+  meleeDamagePerLevel?: number;
+  healthPerLevel?: number;
+  weaponInventory: [];
+  vitalityInventory: [];
+  spiritInventory: [];
+  flexInventory: [];
 }
 
 export interface HeroAttributesMap {
@@ -60,7 +63,7 @@ export interface Modifiers {
     spiritResist?: ModifierTuple;
 }
 
-export type EffectCondition = "headshot" | "range" | undefined;
+export type EffectCondition = "headshot" | "range" | "health" | undefined;
 
 export interface ItemPassives extends Modifiers {
   condition: EffectCondition;
@@ -85,7 +88,7 @@ export interface Item {
     cost: number;
     tier: number;
     //TODO: This might need refactor
-    componentOf: Item | undefined;
+    componentOf?: Item;
     modifiers: Modifiers;
     passives: ItemPassives | undefined;
     actives: ItemActives | undefined;

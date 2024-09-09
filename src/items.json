@@ -18,108 +18,594 @@
         "tier": 1,
         "cost": 500,
         "modifiers": {
-            "bulletSheild": ["*", 1.15]
+            "bulletSheild": ["+", 85]
         },
         "passives": {
             "condition": "range",
-            "range": 15,
-            "bulletDamage": ["*", 1.25]
+            "weaponDamage": ["*", 1.25]
         },
         "actives": {},
         "debuffs": {}
     },
-    "Close Quarters": {
-        "name": "Close Quarters",
+    "Headshot Booster": {
+        "name": "Headshot Booster",
         "category": "Weapon",
         "tier": 1,
         "cost": 500,
         "modifiers": {
-            "bulletSheild": ["*", 1.15]
+            "bulletsPerSec": ["*", 1.15],
+            "bulletSheild": ["+", 40]
         },
         "passives": {
-            "condition": "range",
-            "range": 15,
-            "bulletDamage": ["*", 1.25]
+            "condition": "headshot",
+            "bulletDamage": ["+", 45],
+            "cooldown": 7
         },
         "actives": {},
         "debuffs": {}
     },
-    "Close Quarters": {
-        "name": "Close Quarters",
+    "High-Velocity Mag": {
+        "name": "High-Velocity Mag",
         "category": "Weapon",
         "tier": 1,
         "cost": 500,
         "modifiers": {
-            "bulletSheild": ["*", 1.15]
+            "bulletDamage": ["*", 1.14],
+            "bulletSheild": ["+", 50]
+        },
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Hollow Point Ward": {
+        "name": "Hollow Point Ward",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletSheild": ["+", 85],
+            "spiritPower": ["+", 4]
         },
         "passives": {
-            "condition": "range",
-            "range": 15,
-            "bulletDamage": ["*", 1.25]
+            "condition": "health",
+            "bulletDamage": ["*", 1.20]
         },
         "actives": {},
         "debuffs": {}
     },
-    "Close Quarters": {
-        "name": "Close Quarters",
+    "Monster Rounds": {
+        "name": "Monster Rounds",
         "category": "Weapon",
         "tier": 1,
         "cost": 500,
         "modifiers": {
-            "bulletSheild": ["*", 1.15]
+            "bulletSheild": ["+", 50],
+            "healthRegen": ["+", 1]
+        },
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Rapid Rounds": {
+        "name": "Rapid Rounds",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletsPerSec": ["*", 1.12],
+            "sprintSpeed": ["+", 1],
+            "health": ["-", 50]
+        },
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Restorative Shot": {
+        "name": "Restorative Shot",
+        "category": "Weapon",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
         },
         "passives": {
-            "condition": "range",
-            "range": 15,
-            "bulletDamage": ["*", 1.25]
+            "cooldown": 6
         },
         "actives": {},
         "debuffs": {}
     },
-    "Close Quarters": {
-        "name": "Close Quarters",
+    "Active Reload": {
+        "name": "Active Reload",
         "category": "Weapon",
-        "tier": 1,
-        "cost": 500,
+        "tier": 2,
+        "cost": 1250,
         "modifiers": {
-            "bulletSheild": ["*", 1.15]
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
         },
         "passives": {
-            "condition": "range",
-            "range": 15,
-            "bulletDamage": ["*", 1.25]
+            "cooldown": 6
         },
         "actives": {},
         "debuffs": {}
     },
-    "Close Quarters": {
-        "name": "Close Quarters",
+    "Berserker": {
+        "name": "Berserker",
         "category": "Weapon",
-        "tier": 1,
-        "cost": 500,
+        "tier": 2,
+        "cost": 1250,
         "modifiers": {
-            "bulletSheild": ["*", 1.15]
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
         },
         "passives": {
-            "condition": "range",
-            "range": 15,
-            "bulletDamage": ["*", 1.25]
+            "cooldown": 6
         },
         "actives": {},
         "debuffs": {}
     },
-    "Close Quarters": {
-        "name": "Close Quarters",
+    "Kinetic Dash": {
+        "name": "Kinetic Dash",
         "category": "Weapon",
-        "tier": 1,
-        "cost": 500,
+        "tier": 2,
+        "cost": 1250,
         "modifiers": {
-            "bulletSheild": ["*", 1.15]
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
         },
         "passives": {
-            "condition": "range",
-            "range": 15,
-            "bulletDamage": ["*", 1.25]
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Long Range": {
+        "name": "Long Range",
+        "category": "Weapon",
+        "tier": 2,
+        "cost": 1250,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Melee Charge": {
+        "name": "Melee Charge",
+        "category": "Weapon",
+        "tier": 2,
+        "cost": 1250,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Mystic Shot": {
+        "name": "Mystic Shot",
+        "category": "Weapon",
+        "tier": 2,
+        "cost": 1250,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Slowing Bullets": {
+        "name": "Slowing Bullets",
+        "category": "Weapon",
+        "tier": 2,
+        "cost": 1250,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Soul Shredder Bullets": {
+        "name": "Soul Shredder Bullets",
+        "category": "Weapon",
+        "tier": 2,
+        "cost": 1250,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Swift Striker": {
+        "name": "Swift Striker",
+        "category": "Weapon",
+        "tier": 2,
+        "cost": 1250,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Fleetfoot": {
+        "name": "Fleetfoot",
+        "category": "Weapon",
+        "tier": 2,
+        "cost": 1250,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Burst Fire": {
+        "name": "Burst Fire",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Escalating Resilience": {
+        "name": "Escalating Resilience",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Headhunter": {
+        "name": "Headhunter",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Hunter's Aura": {
+        "name": "Hunter's Aura",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Intensifying Magazine": {
+        "name": "Intensifying Magazine",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Point Blank": {
+        "name": "Point Blank",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3500,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Pristine Emblem": {
+        "name": "Pristine Emblem",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Sharpshooter": {
+        "name": "Sharpshooter",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 4250,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Tesla Bullets": {
+        "name": "Tesla Bullets",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Titanic Magazine": {
+        "name": "Titanic Magazine",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3500,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Toxic Bullets": {
+        "name": "Toxic Bullets",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Alchemical Fire": {
+        "name": "Alchemical Fire",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Heroic Aura": {
+        "name": "Heroic Aura",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Warp Stone": {
+        "name": "Warp Stone",
+        "category": "Weapon",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Crippling Headshot": {
+        "name": "Crippling Headshot",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Frenzy": {
+        "name": "Frenzy",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Glass Cannon": {
+        "name": "Glass Cannon",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Lucky Shot": {
+        "name": "Lucky Shot",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Ricochet": {
+        "name": "Ricochet",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Siphon Bullets": {
+        "name": "Siphon Bullets",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Spiritual Overflow": {
+        "name": "Spiritual Overflow",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Silencer": {
+        "name": "Silencer",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 7550,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
+        },
+        "actives": {},
+        "debuffs": {}
+    },
+    "Vampiric Burst": {
+        "name": "Vampiric Burst",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": {
+            "bulletResist": ["*", 1.07],
+            "bulletDamage": ["*", 1.08]
+        },
+        "passives": {
+            "cooldown": 6
         },
         "actives": {},
         "debuffs": {}

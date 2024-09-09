@@ -3,6 +3,12 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./src/**/*.tsx"],
+  purge: {
+    options: {
+      content: ['./src/**/*.{js,ts,jsx,tsx}'], // Paths to your content files
+      safelist: ['weapon', 'bg-weapon-bg-1', 'bg-weapon-bg-2', 'vitality', 'vitaliy-bg-1', 'vitality-bg-2', 'spirit', 'spirit-bg-1', 'spirit-bg-2'], // Add your dynamic class names here
+    },
+  },
   theme: {
     extend: {
       gradientColorStops: {
