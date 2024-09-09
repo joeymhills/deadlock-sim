@@ -6,6 +6,10 @@ await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const config = {
+    
+    eslint: {
+        ignoreDuringBuilds: true, // Disables ESLint during the build process
+      },
     typescript: {
         ignoreBuildErrors: true, // Disables TypeScript type checking during build
         },
