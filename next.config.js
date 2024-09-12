@@ -7,6 +7,8 @@ await import("./src/env.js");
 /** @type {import("next").NextConfig} */
 const config = {
     
+    reactStrictMode: false, // Disable Strict Mode
+
     eslint: {
         ignoreDuringBuilds: true, // Disables ESLint during the build process
       },

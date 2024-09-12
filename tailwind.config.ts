@@ -37,10 +37,11 @@ export default {
           'spirit-bg-2': '#332044',
 
           'souls': '#6AFFDA',
-          'offwhite': '#EFE2CB'
+          'offwhite': '#EFE2CB',
+          'offwhite-dark': '#867B6A'
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        colus: ['colus', 'sans-serif'],
       },
     },
   },

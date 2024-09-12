@@ -11,18 +11,23 @@ export default function HomePage() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center bg-darker text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Select a <span className="text-accent">Hero</span>
-        </h1>
-        <div className="grid lg:grid-cols-7 gap-4 md:grid-cols-5 sm:grid-cols-3 md:gap-8">
+    <main className="flex min-h-screen flex-col items-center bg-black/90 text-white"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/bg-deadlock.png)`,
+            backgroundSize: 'cover', // Cover the entire div
+            backgroundPosition: 'center', // Center the background image
+          }} 
+        >
+      <div className="">
+        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16"
+            >
+          <h1 className="text-7xl font-extrabold text-offwhite">Select a Hero</h1>
           
-          {heroes.map(hero => (
-          <Card key={hero} name={hero} />
-          ))}
-
+          <div className="grid lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-3 gap-4">
+            {heroes.map(hero => (
+            <Card key={hero} name={hero} />
+            ))}
+          </div>
         </div>
       </div>
     </main>

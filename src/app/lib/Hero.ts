@@ -18,17 +18,18 @@ const defaultHeroAttributes: HeroAttributes = {
     stamina: 0,
     abilityRange: 0,
     cooldownReduction: 0,
-    spiritPower: 0,
     bulletLifesteal: 0,
     spiritLifesteal: 0,
     bulletShield: 0,
     spiritShield: 0,
+
     abilityPoints: 0,
+    spiritPower: 0,
     spiritScaling: ["default", 0],
-    weaponInventory: [],
-    vitalityInventory: [],
-    spiritInventory: [],
-    flexInventory: []
+    inventory: [],
+    bulletDamagePerLevel: 0,
+    meleeDamagePerLevel: 0,
+    healthPerLevel: 0,
   };
 export class Hero {
     bulletDamage: number;
@@ -46,21 +47,45 @@ export class Hero {
     stamina: number;
     abilityRange: number;
     cooldownReduction: number;
-    spiritPower: number;
     bulletLifesteal: number;
     spiritLifesteal: number;
     bulletShield: number;
     spiritShield: number;
+    
+    /*
+    baseBulletDamage: number;
+    baseBulletsPerShot: number;
+    baseAmmo: number;
+    baseBulletsPerSec: number;
+    baseLightMelee: number;
+    baseHeavyMelee: number;
+    baseHealth: number;
+    baseHealthRegen: number;
+    baseBulletResist: number;
+    baseSpiritResist: number;
+    baseMoveSpeed: number;
+    baseSprintSpeed: number;
+    baseStamina: number;
+    baseAbilityRange: number;
+    baseCooldownReduction: number;
+    baseBulletLifesteal: number;
+    baseSpiritLifesteal: number;
+    baseBulletShield: number;
+    baseSpiritShield: number;
+    */
+
+    spiritPower: number;
     abilityPoints: number;
     spiritScaling: [string,number];
-    weaponInventory: Item[];
-    vitalityInventory: Item[];
-    spiritInventory: Item[];
-    flexInventory: Item[];
+    inventory: Item[];
+    base: HeroAttributes;
 
 
     constructor(heroData: Partial<HeroAttributes> = {}) {
         const data = { ...defaultHeroAttributes, ...heroData };
+
+        this.base = {...defaultHeroAttributes, ...heroData};
+
         this.bulletDamage = data.bulletDamage!;
         this.bulletsPerShot = data.bulletsPerShot!;
         this.ammo = data.ammo!;
@@ -76,16 +101,14 @@ export class Hero {
         this.stamina = data.stamina!;
         this.abilityRange = data.abilityRange!;
         this.cooldownReduction = data.cooldownReduction!;
-        this.spiritPower = data.spiritPower!;
         this.bulletLifesteal = data.bulletLifesteal!;
         this.spiritLifesteal = data.spiritLifesteal!;
         this.bulletShield = data.bulletShield!;
         this.spiritShield = data.spiritShield!;
+
+        this.spiritPower = data.spiritPower!;
         this.abilityPoints = data.abilityPoints!;
         this.spiritScaling = data.spiritScaling!;
-        this.weaponInventory = data.weaponInventory!;
-        this.vitalityInventory = data.vitalityInventory!;
-        this.spiritInventory = data.spiritInventory!;
-        this.flexInventory = data.flexInventory!;
+        this.inventory = data.inventory!;
     }
 }
