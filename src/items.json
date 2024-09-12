@@ -78,11 +78,179 @@
       "actives": null,
       "debuffs": null
     },
-    "Tier 2": {
-      "name": "Tier 2",
+    "Active Reload": {
+      "name": "Active Reload",
       "category": "Weapon",
       "tier": 2,
       "cost": 1250,
+      "modifiers": [
+        {
+          "stat": "bulletDamage",
+          "modifier": "*",
+          "value": 1.14
+        },
+        {
+          "stat": "bulletSheild",
+          "modifier": "+",
+          "value": 50
+        }
+      ],
+      "passives": null,
+      "actives": null,
+      "debuffs": null
+    },
+    "Burst Fire": {
+      "name": "Burst Fire",
+      "category": "Weapon",
+      "tier": 3,
+      "cost": 3000,
+      "modifiers": [
+        {
+          "stat": "bulletDamage",
+          "modifier": "*",
+          "value": 1.14
+        },
+        {
+          "stat": "bulletSheild",
+          "modifier": "+",
+          "value": 50
+        }
+      ],
+      "passives": null,
+      "actives": null,
+      "debuffs": null
+    },
+    "Escalating Resilience": {
+      "name": "Escalating Resilience",
+      "category": "Weapon",
+      "tier": 3,
+      "cost": 3000,
+      "modifiers": [
+        {
+          "stat": "bulletDamage",
+          "modifier": "*",
+          "value": 1.14
+        },
+        {
+          "stat": "bulletSheild",
+          "modifier": "+",
+          "value": 50
+        }
+      ],
+      "passives": null,
+      "actives": null,
+      "debuffs": null
+    },
+    "Headhunter": {
+      "name": "Headhunter",
+      "category": "Weapon",
+      "tier": 3,
+      "cost": 3500,
+      "modifiers": [
+        {
+          "stat": "bulletDamage",
+          "modifier": "*",
+          "value": 1.14
+        },
+        {
+          "stat": "bulletSheild",
+          "modifier": "+",
+          "value": 50
+        }
+      ],
+      "passives": null,
+      "actives": null,
+      "debuffs": null
+    },
+    "Hunter's Aura": {
+      "name": "Hunter's Aura",
+      "category": "Weapon",
+      "tier": 3,
+      "cost": 3000,
+      "modifiers": [
+        {
+          "stat": "bulletDamage",
+          "modifier": "*",
+          "value": 1.14
+        },
+        {
+          "stat": "bulletSheild",
+          "modifier": "+",
+          "value": 50
+        }
+      ],
+      "passives": null,
+      "actives": null,
+      "debuffs": null
+    },
+    "Intensifying Magazine": {
+      "name": "Intensifying Magazine",
+      "category": "Weapon",
+      "tier": 3,
+      "cost": 3000,
+      "modifiers": [
+        {
+          "stat": "bulletDamage",
+          "modifier": "*",
+          "value": 1.14
+        },
+        {
+          "stat": "bulletSheild",
+          "modifier": "+",
+          "value": 50
+        }
+      ],
+      "passives": null,
+      "actives": null,
+      "debuffs": null
+    },
+    "Point Blank": {
+      "name": "Point Blank",
+      "category": "Weapon",
+      "tier": 3,
+      "cost": 3000,
+      "modifiers": [
+        {
+          "stat": "bulletDamage",
+          "modifier": "*",
+          "value": 1.14
+        },
+        {
+          "stat": "bulletSheild",
+          "modifier": "+",
+          "value": 50
+        }
+      ],
+      "passives": null,
+      "actives": null,
+      "debuffs": null
+    },
+    "Pristine Emblem": {
+      "name": "Pristine Emblem",
+      "category": "Weapon",
+      "tier": 3,
+      "cost": 3000,
+      "modifiers": [
+        {
+          "stat": "bulletDamage",
+          "modifier": "*",
+          "value": 1.14
+        },
+        {
+          "stat": "bulletSheild",
+          "modifier": "+",
+          "value": 50
+        }
+      ],
+      "passives": null,
+      "actives": null,
+      "debuffs": null
+    },
+    "Sharpshooter": {
+      "name": "Sharpshooter",
+      "category": "Weapon",
+      "tier": 3,
+      "cost": 4250,
       "modifiers": [
         {
           "stat": "bulletDamage",
@@ -372,25 +540,356 @@
         "actives": {},
         "debuffs": {}
     },
-    "Spiritual Overflow": {
-        "name": "Spiritual Overflow",
-        "category": "Weapon",
+    "Enduring Spirit": {
+        "name": "Enduring Spirit",
+        "category": "Vitality",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": [
+            {
+                "stat": "spiritLifesteal",
+                "modifier": "*",
+                "value": 1.08
+            },
+            {
+                "stat": "spiritPower",
+                "modifier": "+",
+                "value": 4 
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 75 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Extra Health": {
+        "name": "Extra Health",
+        "category": "Vitality",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+
+    "Bullet Armor": {
+        "name": "Bullet Armor",
+        "category": "Vitality",
+        "tier": 2,
+        "cost": 1250,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+
+    "Fortitude": {
+        "name": "Fortitude",
+        "category": "Vitality",
+        "tier": 3,
+        "cost": 3000,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Inhibitor": {
+        "name": "Inhibitor",
+        "category": "Vitality",
         "tier": 4,
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "bulletResist",
+                "stat": "weaponDamage",
                 "modifier": "*",
-                "value": 1.07
+                "value": 1.05
             },
             {
-                "stat": "bulletDamage",
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Leech": {
+        "name": "Leech",
+        "category": "Vitality",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
                 "modifier": "*",
-                "value": 1.08
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+
+    "Soul Rebirth": {
+        "name": "Soul Rebirth",
+        "category": "Vitality",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+
+    "Colossus": {
+        "name": "Colossus",
+        "category": "Vitality",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+
+    "Phantom Strike": {
+        "name": "Phantom Strike",
+        "category": "Vitality",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+
+    "Shadow Weave": {
+        "name": "Shadow Weave",
+        "category": "Vitality",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+
+    "Unstoppable": {
+        "name": "Unstoppable",
+        "category": "Vitality",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+
+    "Inhibitor": {
+        "name": "Inhibitor",
+        "category": "Vitality",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+
+
+    "Ammo Scavenger": {
+        "name": "Ammo Scavenger",
+        "category": "Spirit",
+        "tier": 1,
+        "cost": 500,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Bullet Resist Shredder": {
+        "name": "Bullet Resist Shredder",
+        "category": "Spirit",
+        "tier": 2,
+        "cost": 1250,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Improved Burst": {
+        "name": "Improved Burst",
+        "category": "Spirit",
+        "tier": 3,
+        "cost": 3500,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Boundless Spirit": {
+        "name": "Boundless Spirit",
+        "category": "Spirit",
+        "tier": 4,
+        "cost": 9800,
+        "modifiers": [
+            {
+                "stat": "weaponDamage",
+                "modifier": "*",
+                "value": 1.05
+            },
+            {
+                "stat": "health",
+                "modifier": "+",
+                "value": 160 
             }
         ],
         "passives": {},
         "actives": {},
         "debuffs": {}
     }
+
 }

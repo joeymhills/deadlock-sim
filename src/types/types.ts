@@ -22,6 +22,7 @@ export interface HeroAttributes {
 
   spiritPower: number;
   abilityPoints: number;
+  flexSlots: number;
   spiritScaling: [string, number];
   bulletDamagePerLevel: number;
   meleeDamagePerLevel: number;
@@ -35,7 +36,7 @@ export interface HeroAttributesMap {
 
 export interface Action {
   item: Item | undefined;
-  type: 'UPDATE_STATS' | 'TOGGLE_ITEM';
+  type: 'UPDATE_STATS' | 'TOGGLE_ITEM' | 'SUBTRACT_ABILITY_POINT' | 'ADD_ABILITY_POINT';
 }
 
 //Item types

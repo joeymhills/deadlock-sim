@@ -30,6 +30,7 @@ const defaultHeroAttributes: HeroAttributes = {
     bulletDamagePerLevel: 0,
     meleeDamagePerLevel: 0,
     healthPerLevel: 0,
+    flexSlots: 0,
   };
 export class Hero {
     bulletDamage: number;
@@ -52,33 +53,12 @@ export class Hero {
     bulletShield: number;
     spiritShield: number;
     
-    /*
-    baseBulletDamage: number;
-    baseBulletsPerShot: number;
-    baseAmmo: number;
-    baseBulletsPerSec: number;
-    baseLightMelee: number;
-    baseHeavyMelee: number;
-    baseHealth: number;
-    baseHealthRegen: number;
-    baseBulletResist: number;
-    baseSpiritResist: number;
-    baseMoveSpeed: number;
-    baseSprintSpeed: number;
-    baseStamina: number;
-    baseAbilityRange: number;
-    baseCooldownReduction: number;
-    baseBulletLifesteal: number;
-    baseSpiritLifesteal: number;
-    baseBulletShield: number;
-    baseSpiritShield: number;
-    */
-
     spiritPower: number;
     abilityPoints: number;
     spiritScaling: [string,number];
     inventory: Item[];
     base: HeroAttributes;
+    flexSlots: number;
 
 
     constructor(heroData: Partial<HeroAttributes> = {}) {
@@ -110,5 +90,6 @@ export class Hero {
         this.abilityPoints = data.abilityPoints!;
         this.spiritScaling = data.spiritScaling!;
         this.inventory = data.inventory!;
+        this.flexSlots = data.flexSlots!;
     }
 }
