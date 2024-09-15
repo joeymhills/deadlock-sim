@@ -1,3 +1,16 @@
 use steam api/0auth
 -add abilities + ability points
 -add items
+-add health regen to sim:
+
+Notes on item iteractions:
+General:
+- Headshot multiplier is 2x;
+
+Vitality:
+- Percentage health increases only affect BASE health;
+- All additive health increases are just "Bonus Health";
+Weapon:
+- Always percentage based(just add percentages and apply at the end);
+Spirit:
+- Always additive;

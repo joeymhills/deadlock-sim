@@ -1,5 +1,6 @@
 //Hero types
 export interface HeroAttributes {
+  name: string;
   bulletDamage: number;
   bulletsPerShot: number;
   ammo: number;
@@ -77,8 +78,11 @@ export interface Item {
     category: string;
     cost: number;
     tier: number;
-    //TODO: This might need refactor
+    
+    //TODO: These might need refactor
+    isFlex?: boolean;
     componentOf?: Item;
+
     modifiers: Modifier[];
     passives: ItemPassives | undefined;
     actives: ItemActives | undefined;
@@ -92,3 +96,4 @@ export interface ItemComponentProps {
     toggleItem: (action: Action) => void;
 }
 //Ability Types
+

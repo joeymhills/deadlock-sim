@@ -1,5 +1,6 @@
 {
     "Abrams": {
+      "name": "Abrams",
       "bulletDamage": 4.68,
       "bulletsPerShot": 8,
       "ammo": 9,
@@ -24,10 +25,11 @@
       "spiritShield": 0
     },
     "Bebop": {
-      "bulletDamage": 5.3,
-      "bulletsPerShot": 1,
+      "name": "Bebop",
+      "bulletDamage": 5.2,
+      "bulletsPerShot": 12.5,
       "ammo": 66,
-      "bulletsPerSec": 12.5,
+      "bulletsPerSec": 1,
       "lightMelee": 63,
       "heavyMelee": 116,
 
@@ -48,6 +50,7 @@
       "spiritShield": 0
     },
     "Dynamo": {
+      "name": "Dynamo",
       "bulletDamage": 13,
       "bulletsPerShot": 1,
       "ammo": 18,
@@ -72,6 +75,7 @@
       "spiritShield": 0
     },
     "Grey Talon": {
+      "name": "Grey Talon",
       "bulletDamage": 22,
       "bulletsPerShot": 1,
       "ammo": 17,
@@ -96,6 +100,7 @@
       "spiritShield": 0
     },
     "Haze": {
+      "name": "Haze",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -120,6 +125,7 @@
       "spiritShield": 0
     },
     "Infernus": {
+      "name": "Infernus",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -144,6 +150,7 @@
       "spiritShield": 0
     },
     "Ivy": {
+      "name": "Ivy",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -168,6 +175,7 @@
       "spiritShield": 0
     },
     "Kelvin": {
+      "name": "Kelvin",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -192,6 +200,7 @@
       "spiritShield": 0
     },
     "Lady Geist": {
+      "name": "Lady Geist",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -216,6 +225,7 @@
       "spiritShield": 0
     },
     "Lash": {
+      "name": "Lash",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -240,6 +250,7 @@
       "spiritShield": 0
     },
     "McGinnis": {
+      "name": "McGinnis",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -264,6 +275,7 @@
       "spiritShield": 0
     },
     "Mo & Krill": {
+      "name": "Mo & Krill",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -288,6 +300,7 @@
       "spiritShield": 0
     },
     "Paradox": {
+      "name": "Paradox",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -312,6 +325,7 @@
       "spiritShield": 0
     },
     "Pocket": {
+      "name": "Pocket",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -336,6 +350,7 @@
       "spiritShield": 0
     },
     "Seven": {
+      "name": "Seven",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -360,6 +375,7 @@
       "spiritShield": 0
     },
     "Shiv": {
+      "name": "Shiv",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -384,6 +400,7 @@
       "spiritShield": 0
     },
     "Vindicta": {
+      "name": "Vindicta",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -408,6 +425,7 @@
       "spiritShield": 0
     },
     "Viscous": {
+      "name": "Viscous",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -432,6 +450,7 @@
       "spiritShield": 0
     },
     "Warden": {
+      "name": "Warden",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -456,6 +475,7 @@
       "spiritShield": 0
     },
     "Wraith": {
+      "name": "Wraith",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,
@@ -480,6 +500,7 @@
       "spiritShield": 0
     },
     "Yamato": {
+      "name": "Yamato",
       "bulletDamage": 40,
       "bulletsPerShot": 1,
       "ammo": 66,

@@ -3,6 +3,7 @@
 import { HeroAttributes, Item, ItemActives, ItemPassives, ItemDebuffs} from "~/types/types";
 
 const defaultHeroAttributes: HeroAttributes = {
+    name: "",
     bulletDamage: 0,
     bulletsPerShot: 0,
     ammo: 0,
@@ -33,6 +34,7 @@ const defaultHeroAttributes: HeroAttributes = {
     flexSlots: 0,
   };
 export class Hero {
+    name: string;
     bulletDamage: number;
     bulletsPerShot: number;
     ammo: number;
@@ -66,6 +68,7 @@ export class Hero {
 
         this.base = {...defaultHeroAttributes, ...heroData};
 
+        this.name = data.name!;
         this.bulletDamage = data.bulletDamage!;
         this.bulletsPerShot = data.bulletsPerShot!;
         this.ammo = data.ammo!;

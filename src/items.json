@@ -16,9 +16,9 @@
           "value": 1.15
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Close Quarters": {
       "name": "Close Quarters",
@@ -33,8 +33,8 @@
         }
       ],
       "passives": {},
-      "actives": null,
-      "debuffs": null
+      "actives": {},
+      "debuffs": {}
     },
     "Headshot Booster": {
       "name": "Headshot Booster",
@@ -54,8 +54,8 @@
         }
       ],
       "passives": {},
-      "actives": null,
-      "debuffs": null
+      "actives": {},
+      "debuffs": {}
     },
     "High-Velocity Mag": {
       "name": "High-Velocity Mag",
@@ -74,9 +74,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Active Reload": {
       "name": "Active Reload",
@@ -95,9 +95,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Burst Fire": {
       "name": "Burst Fire",
@@ -116,9 +116,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Escalating Resilience": {
       "name": "Escalating Resilience",
@@ -137,9 +137,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Headhunter": {
       "name": "Headhunter",
@@ -158,9 +158,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Hunter's Aura": {
       "name": "Hunter's Aura",
@@ -179,9 +179,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Intensifying Magazine": {
       "name": "Intensifying Magazine",
@@ -200,9 +200,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Point Blank": {
       "name": "Point Blank",
@@ -221,9 +221,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Pristine Emblem": {
       "name": "Pristine Emblem",
@@ -242,9 +242,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Sharpshooter": {
       "name": "Sharpshooter",
@@ -263,9 +263,9 @@
           "value": 50
         }
       ],
-      "passives": null,
-      "actives": null,
-      "debuffs": null
+      "passives": {},
+      "actives": {},
+      "debuffs": {}
     },
     "Tesla Bullets": {
         "name": "Tesla Bullets",
@@ -285,8 +285,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Titanic Magazine": {
         "name": "Titanic Magazine",
@@ -306,8 +306,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Toxic Bullets": {
         "name": "Toxic Bullets",
@@ -327,8 +327,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Alchemical Fire": {
         "name": "Alchemical Fire",
@@ -348,8 +348,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Heroic Aura": {
         "name": "Heroic Aura",
@@ -369,8 +369,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Warp Stone": {
         "name": "Warp Stone",
@@ -390,8 +390,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Crippling Headshot": {
         "name": "Crippling Headshot",
@@ -411,8 +411,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Frenzy": {
         "name": "Frenzy",
@@ -432,8 +432,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Glass Cannon": {
         "name": "Glass Cannon",
@@ -453,8 +453,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Lucky Shot": {
         "name": "Lucky Shot",
@@ -474,8 +474,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Ricochet": {
         "name": "Ricochet",
@@ -495,8 +495,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Siphon Bullets": {
         "name": "Siphon Bullets",
@@ -516,8 +516,8 @@
             }
         ],
         "passives": {},
-        "actives": null,
-        "debuffs": null
+        "actives": {},
+        "debuffs": {}
     },
     "Spiritual Overflow": {
         "name": "Spiritual Overflow",

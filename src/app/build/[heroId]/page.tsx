@@ -116,7 +116,17 @@ export default function Page({ params }: { params: { heroId: string } }) {
   
   const imgName = heroName.replace(/\s+/g, '-');
   
-  const items: ItemMap = itemData;
+  const items = itemData;
+
+  {/*
+  Object.keys(items).forEach(key => {
+    const items[key];
+    if (item.isFlex === undefined) {
+      item.isFlex = false; // Set isFlex to false if undefined
+    }
+  });
+  */}
+  
   const [activeCategory, setActiveCategory] = useState<string>("weapon");
 
   return (
@@ -320,7 +330,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
 
             {/* Render empty item slots to fill up to 4 */}
             {(() => {
-              const itemCount = hero.inventory.filter(item => item.category == "Spirit").length || 0;
+              const itemCount = hero.inventory.filter(item => (item.category == "Spirit" && (!item.isFlex))).length || 0;
               const emptySlotsCount = Math.max(4 - itemCount, 0);
               
               return Array.from({ length: emptySlotsCount }).map((_, i) => (
@@ -330,7 +340,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
             </div>
 
             <div className="grid grid-cols-2 gap-2">
-              {hero.inventory?.filter(item => item.category == "Spirit").map((item, index) => (
+              {hero.inventory?.filter(item => item.isFlex == true).map((item, index) => (
                 <ItemCardMini
                   key={index}
                   name={`${item.name}`}
