@@ -1,3 +1,5 @@
+//An attempt on a sycronous and interactive implementation of the simulator.
+
 import { Hero } from "~/app/lib/Hero";
 import Heap from "heap-js";
 
@@ -472,26 +474,33 @@ export class Sim {
                 this.heroB,
                 this.heroA
         ));
-
         let times: number[] = [];
-        //Main engine loop
-        while (this.heroA.health > 0 && this.heroB.health > 0) {
-            const start = performance.now();
-            this.checkEvents();
 
-            this.nextTick();
+        //Main engine loop
+        const tickDuration = 1000 / 64;
+        let start: number;
+        let now: number;
+        let deltaTime: number;
+        let timeToNextTick:number; 
+
+        while (this.heroA.health > 0 && this.heroB.health > 0) {
+            start = performance.now();
+            this.checkEvents();
 
             // Prevent infinite looping
             if (this.tick > 100000) {
                 break;
             }
 
-            const end = performance.now();
-            times.push(end - start);
+            deltaTime = performance.now() - start;
+
+            if (deltaTime < tickDuration) {
+                setTimeout((() => console.log(`pausing execution for ${tickDuration - deltaTime}`)),
+                    (tickDuration - deltaTime))
+            }
+            
+            this.nextTick();
         }
-        const length = times.length;
-        const sum = times.reduce((accumulator: number, currentValue: number) => accumulator + currentValue, 0)
-        console.log(`times: ${ times }`)
 
         console.log("TTK is:", this.tick / 64, " seconds");
         return [this.heroA, this.heroB];

@@ -1,9 +1,17 @@
-use steam api/0auth
+GENERAL TODOS:
+
+***********************
+*** START USING ZOD ***
+***********************
+
+-As complexity grows, I might need to introduce a "scheduler" that schedules events instead of leaving the events to schedule themselves;
+
+-use steam api/0auth
 -add abilities + ability points
 -add items
 -add health regen to sim:
 
-Notes on item iteractions:
+NOTES ON ITEM ITERACTIONS:
 General:
 - Headshot multiplier is 2x;
 

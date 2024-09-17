@@ -27,9 +27,9 @@
     "Bebop": {
       "name": "Bebop",
       "bulletDamage": 5.2,
-      "bulletsPerShot": 12.5,
+      "bulletsPerShot": 1,
       "ammo": 66,
-      "bulletsPerSec": 1,
+      "bulletsPerSec": 12.5,
       "lightMelee": 63,
       "heavyMelee": 116,
 
