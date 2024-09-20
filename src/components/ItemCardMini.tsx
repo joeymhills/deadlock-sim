@@ -4,7 +4,7 @@ import { displayModifier } from '~/app/utils';
 
 export const ItemCardMini: React.FC<ItemComponentProps> = ({ item, toggleItem }) => {
     const { category, cost, modifiers, passives, actives } = item;
-    const imgName = "/items/" + category + "/" + item.name.replace(/\s+/g, '_') + ".png";
+    const imgName = "/items/" + category.toLowerCase() + "/" + item.name.replace(/\s+/g, '_') + ".png";
     const action: Action = { item, type: 'TOGGLE_ITEM'}
 
     return (

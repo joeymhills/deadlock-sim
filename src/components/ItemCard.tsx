@@ -4,7 +4,7 @@ import { displayModifier } from '~/app/utils';
 
 export const ItemCard: React.FC<ItemComponentProps> = ({ item, toggleItem }) => {
     const { category, cost, passives, actives } = item;
-    const imgName = "/items/" + category + "/" + item.name.replace(/\s+/g, '_') + ".png";
+    const imgName = "/items/" + category.toLowerCase() + "/" + item.name.replace(/\s+/g, '_') + ".png";
     const action: Action = { item, type: 'TOGGLE_ITEM'}
     return (
         <div onClick={() => toggleItem(action)} className={`max-w-24 max-h-28 flex flex-col justify-center items-center shadow-xl rounded-md bg-${category.toLowerCase()} hover:cursor-pointer`}>
