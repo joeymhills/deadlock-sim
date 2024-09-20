@@ -1,5 +1,5 @@
 "use client"
-import BuildCard from "~/components/buildCard";
+import BuildCard from "~/components/BuildCard";
 import { getSavedBuilds, loadBuild } from "../lib/Builds";
 
 export default function HomePage() {
