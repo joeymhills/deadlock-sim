@@ -101,7 +101,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
   //Tracks if this is the first render, used use useEffects to avoid updating stats on first render
   const isFirstRender = useRef(true);
 
-  let heroName = params.heroId;
+  let heroName = decodeURIComponent(params.heroId);
   const heroes: HeroAttributesMap = heroData;
 
   //TODO: Take another look at this
@@ -132,6 +132,8 @@ export default function Page({ params }: { params: { heroId: string } }) {
   const items = itemData;
 
   const [activeCategory, setActiveCategory] = useState<string>("weapon");
+
+  console.log(hero.name);
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-darker text-white">
