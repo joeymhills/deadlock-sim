@@ -1,11 +1,11 @@
-//An attempt on a sycronous and interactive implementation of the simulator.
-
+import React, { useEffect, useState, useRef } from "react";
 import { Hero } from "~/app/lib/Hero";
 import Heap from "heap-js";
+import { getImageName } from "~/utils";
 
 enum DamageType {
-    Physical = 'Physical',
-    Spirit = 'Spirit',
+    Bullet = 'bullet',
+    Spirit = 'spirit',
 }
 
 //**ChatGPT code starts here**
@@ -28,8 +28,10 @@ abstract class Event {
 class BurstDamageEvent extends Event {
     damage: number;
     cooldown: number;
-    constructor(tick: number, cooldown: number, owner: SimHero, target: SimHero, damage: number) {
+    damageType: DamageType;
+    constructor(tick: number, cooldown: number, damageType: DamageType, owner: SimHero, target: SimHero, damage: number) {
         super(tick, owner, target);
+        this.damageType = damageType;
         this.cooldown = cooldown * 64;
         this.damage = damage;
     }
@@ -47,6 +49,7 @@ class BurstDamageEvent extends Event {
         return new BurstDamageEvent(
             this.tick + this.cooldown,
             this.cooldown,
+            this.damageType,
             this.owner,
             this.target,
             this.damage,
@@ -59,10 +62,12 @@ class DoTEvent extends Event {
     tickRate: number;
     duration: number;
     cooldown: number;
-    constructor(tick: number, tickRate: number, cooldown: number, duration: number, owner: SimHero, target: SimHero, damage: number) {
+    damageType: DamageType;
+    constructor(tick: number, tickRate: number, cooldown: number, damageType: DamageType, duration: number, owner: SimHero, target: SimHero, damage: number) {
         super(tick, owner, target);
         this.damage = damage;
         this.cooldown = cooldown * 64;
+        this.damageType = damageType;
         this.tickRate = tickRate;
         this.duration = duration;
         this.eventsRemaining = (Math.round(duration * 64) / tickRate);
@@ -89,6 +94,7 @@ class DoTEvent extends Event {
                 this.tick + this.cooldown,
                 this.tickRate,
                 this.cooldown,
+                this.damageType,
                 this.duration,
                 this.owner,
                 this.target,
@@ -147,10 +153,12 @@ class WeaponEvent extends Event {
     damage: number;
     eventsRemaining: number;
     tickRate: number;
-    constructor(tick: number,owner: SimHero, target: SimHero) {
+    damageType: DamageType;
+    constructor(tick: number, owner: SimHero, target: SimHero) {
         super(tick, owner, target);
         this.damage = (this.owner.gun.damage * this.owner.gun.bulletsPerShot);
         this.tickRate = this.owner.gun.tickRate;
+        this.damageType = DamageType.Bullet;
         
         //TODO: Refactor this and the gun interface, im just lazy rn
         this.eventsRemaining = this.owner.ammo;
@@ -184,7 +192,7 @@ class WeaponEvent extends Event {
     }
 }
 //SimHero related things
-export interface Gun {
+interface Gun {
     damage: number;
     tickRate: number;
     bulletsPerShot: number;
@@ -199,7 +207,7 @@ class SimHero extends Hero {
         this.regenTick = Math.round(64 / hero.healthRegen);
     }
 }
-export class Sim {
+class Sim {
     heroA: SimHero;
     heroB: SimHero;
     tick: number;
@@ -285,3 +293,135 @@ export class Sim {
         return [this.heroA, this.heroB];
     }
 }
+
+interface SimProps {
+    heroAData: Hero;
+    heroBData: Hero;
+  }
+  
+  const SimComponent: React.FC<SimProps> = ({ heroAData, heroBData }) => {
+
+    let animationFrameId: number;
+    const tickDuration = 1000 / 64; // Time for each tick
+    
+    // State Hooks
+    const [heroADisplay, setHeroADisplay] = useState(new SimHero(heroAData));
+    const [heroBDisplay, setHeroBDisplay] = useState(new SimHero(heroBData));
+    const [tickDisplay, setTickDisplay] = useState(0); // Separate state for displaying tick
+    
+    // Ref Hooks
+    const tickRef = useRef(0); // Use ref to track the actual tick within the game loop
+    const eventQueue = useRef(new Heap<Event>((a, b) => a.tick - b.tick)); // Event queue in ref
+    const lastTickTimeRef = useRef(performance.now()); // Keep track of last tick time across renders
+    const heroARef = useRef(new SimHero(heroAData));
+    const heroBRef = useRef(new SimHero(heroBData)); 
+
+    // Schedule an event
+    const scheduleEvent = (event: Event) => {
+      eventQueue.current.push(event);
+    };
+    
+    // Need to find out a way to make these abilities programatically
+    const heroAability1 = () => {
+        return new DoTEvent(tickRef.current, 32, 8, DamageType.Spirit, 8,  heroARef.current, heroBRef.current, 80)
+    }
+  
+    // Check and process events at the current tick
+    const checkEvents = () => {
+      let event = eventQueue.current.peek();
+  
+      while (event && event.tick === tickRef.current) {
+        event = eventQueue.current.pop() as Event;
+        event.apply();
+  
+        // Reschedule the event if necessary
+        scheduleEvent(event.nextEvent());
+  
+        // Peek the next event in the queue
+        event = eventQueue.current.peek();
+      }
+    };
+    useEffect(() => {
+    
+      // Initial event setup
+
+      //Sets up hero guns
+      scheduleEvent(new WeaponEvent(0, heroARef.current, heroBRef.current));
+      scheduleEvent(new WeaponEvent(0, heroBRef.current, heroARef.current));
+      
+      //Sets up innate health regen
+      scheduleEvent(new HealEvent(0, heroARef.current.regenTick, 0, Infinity, heroARef.current, heroARef.current, 1));
+      scheduleEvent(new HealEvent(0, heroARef.current.regenTick, 0, Infinity, heroARef.current, heroARef.current, 1));
+
+    },[])
+
+    // Main Event Loop Checks for events, if events are present then it executes them. If there are no
+    // events then it moves onto the next tick.
+    const gameLoop = () => {
+        const now = performance.now();
+        const deltaTime = now - lastTickTimeRef.current;
+
+        if (deltaTime >= tickDuration) {
+            checkEvents(); // Process events for this tick
+
+            // Increment the tick in the ref
+            tickRef.current += 1;
+
+            // Update the display (this can trigger a re-render)
+            setTickDisplay(tickRef.current);
+            setHeroADisplay(heroARef.current);
+            setHeroBDisplay(heroBRef.current);
+
+            lastTickTimeRef.current = now; // Update last tick time
+        }
+        if (heroARef.current.health <= 0 || heroBRef.current.health <= 0) {
+            
+            //cleanup function
+            return () => {
+                cancelAnimationFrame(animationFrameId);
+            };
+        }
+        // Continue the loop
+        animationFrameId = requestAnimationFrame(gameLoop);
+        
+    };
+  
+      // Start the simulation loop
+    
+    {/*
+      // Cleanup when the component unmounts
+    */}
+  
+    return (
+      <div className="pt-16 text-center min-h-screen flex flex-col items-center gap-4">
+        
+        <div className="flex flex-row justify-center items-start gap-4 p-8 bg-dark">
+          
+          <div className="flex flex-col justify-center items-center">
+            <h2 className="text-3xl">{heroADisplay.name}</h2>
+            <img className="h-72 rounded-md" src={`/heroCards/${getImageName(heroADisplay.name)}`} />
+            <p>Health: {Math.round(heroADisplay.health > 0 ? heroADisplay.health : 0)}</p>
+
+            {/* Max might not be accurate when health is increased by items*/}
+            <progress id="health" value={heroADisplay.health} max={heroADisplay.base.health}></progress>
+
+            <button onClick={() => scheduleEvent(heroAability1())}>Use Ability 1</button>
+          </div>
+  
+          <div className="flex flex-col justify-center items-center">
+            <h2 className="text-3xl">{heroBDisplay.name}</h2>
+            <img className="h-72 rounded-md" src={`/heroCards/${getImageName(heroBDisplay.name)}`} />
+            <p>Health: {Math.round(heroBDisplay.health > 0 ? heroBDisplay.health : 0)}</p>
+
+            {/* Max might not be accurate when health is increased by items*/}
+            <progress id="health" value={heroBDisplay.health} max={heroBDisplay.base.health}></progress>
+          </div>
+        </div>
+
+        <p>Time: {(tickDisplay / 64).toFixed(2)}</p>
+        <button onClick={() => {animationFrameId = requestAnimationFrame(gameLoop);}}>click to begin simulation</button>
+      </div>
+    );
+  };
+  
+  export default SimComponent;

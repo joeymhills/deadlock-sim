@@ -1,23 +1,26 @@
 "use client"
 import Link from "next/link";
-import Card from "../../../components/hero-button";
-import { ItemCard } from "~/components/itemCard";
+import Card from "../../../components/HeroCard";
+import { ItemCard } from "~/components/ItemCard";
 import ItemCardMini from "~/components/ItemCardMini";
 import heroData from "~/heroes.json";
 import itemData from "~/items.json";
 import { Action, HeroAttributes, HeroAttributesMap, Item, ItemMap } from "~/types/types";
 import { Hero } from "~/app/lib/Hero";
 import { useEffect, useState, useReducer, useRef } from "react";
+import { getImageName } from "~/utils";
+import { saveBuild } from "~/app/lib/Builds";
 
-const StatBox: React.FC<{ name: string; value: number }> = ({ name, value }) => {
+const StatBox: React.FC<{ name: string; value: number; icon: string }> = ({ name, value, icon }) => {
   return (
     <div className="flex flex-col justify-start items-center">
       <div className="text-md text-center tracking-tight text-white">
-        {value}
+        {Math.round(value)}
       </div>
       <div className="text-sm text-center tracking-tight text-white">
-        {name}
+        {/* TODO: Removing the text leads to a much cleaner interface */}
       </div>
+      <img className="h-4" src={`/${icon}.png`}/>
     </div>
   );
 };
@@ -105,71 +108,71 @@ export default function Page({ params }: { params: { heroId: string } }) {
   const baseStats = heroes[heroName] ? new Hero(heroes[heroName]) : new Hero(); // Use Hero constructor
 
   const [hero, setHero] = useReducer(heroReducer, baseStats);
-  
+  const [totalCost, setTotalCost]  = useState(0);
+  const [buildName, setBuildName] = useState<string>("");
+
   useEffect(()=> {
+    
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;
     }
     setHero({type:'UPDATE_STATS', item: undefined})
+
+    if (hero.inventory.length > 0) {
+      setTotalCost(() => hero.inventory.map(item => {return item.cost;}).reduce((acc, curr) => acc + curr));
+    } else {
+      setTotalCost(0);
+    }
+
   },[hero.inventory])
   
   const imgName = heroName.replace(/\s+/g, '-');
   
   const items = itemData;
 
-  {/*
-  Object.keys(items).forEach(key => {
-    const items[key];
-    if (item.isFlex === undefined) {
-      item.isFlex = false; // Set isFlex to false if undefined
-    }
-  });
-  */}
-  
   const [activeCategory, setActiveCategory] = useState<string>("weapon");
 
   return (
     <main className="flex min-h-screen flex-col items-center bg-darker text-white">
       
       {/* Container */}
-      <div className="flex flex-row justify-start items-center gap-2 pt-24">
+      <div className="flex flex-row justify-start items-center gap-2 pt-16">
 
-        {/* Hero Attributes */}
-        <div className="flex flex-row self-start items-center fixed top-0 left-0 w-full rounded-b-md bg-dark justify-center gap-4 px-2">
-          <div>
-            <div
-              className="flex justify-end items-center h-20 w-20 rounded-lg"
-              style={{
-                backgroundImage: `url(/heroCards/${imgName}.png)`,
-                backgroundSize: 'cover', // Cover the entire div
-                backgroundPosition: 'center', // Center the background image
-              }} 
-            >
+          {/* Hero Attributes */}
+          <div className="flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 px-2">
+            <div>
+              <img className="p-1 pt-4 h-24 rounded-md" src={`/heroCards/${getImageName(hero.name)}`} />
+            </div>
+            <div className="p-1 flex flex-row justify-center items-center gap-1">
+              <input
+                value={buildName}
+                onChange={e => setBuildName(e.target.value)}
+                placeholder="Enter build name" className="text-sm rounded-md text-black h-6 w-36"
+                ></input>
+                <button onClick={() => saveBuild(hero, buildName)} className="text-white text-sm h-6 w-12 bg-darker rounded-md">Save</button>
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              <StatBox name="DPS" value={Math.floor(hero.bulletDamage * hero.bulletsPerSec * hero.bulletsPerShot)} icon="Damage_Per_Sec" />
+              <StatBox name="Bullet Damage" value={hero.bulletDamage} icon="Bullet_damage"/>
+              <StatBox name="Ammo" value={hero.ammo} icon="Ammo"/>
+              <StatBox name="Bullets Per Sec" value={hero.bulletsPerSec} icon="Bullets_Per_Sec"/>
+              <StatBox name="Light Melee" value={hero.lightMelee} icon="Melee_damage"/>
+              <StatBox name="Heavy Melee" value={hero.heavyMelee} icon="Melee_damage"/>
+              <StatBox name="Health" value={hero.health} icon="Health"/>
+              <StatBox name="Health Regen" value={hero.healthRegen} icon="Health_Regen"/>
+              <StatBox name="Bullet Resist" value={hero.bulletResist} icon="Bullet_Armor"/>
+              <StatBox name="Spirit Resist" value={hero.spiritResist} icon="Spirit_Armor"/>
+              <StatBox name="Move Speed" value={hero.moveSpeed} icon="Move_speed"/>
+              <StatBox name="Sprint Speed" value={hero.sprintSpeed} icon="Move_speed"/>
+              <StatBox name="Stamina" value={hero.stamina} icon="Stamina"/>
             </div>
           </div>
-
-          <div className="flex flex-row gap-2">
-            <StatBox name="DPS" value={Math.floor(hero.bulletDamage * hero.bulletsPerSec * hero.bulletsPerShot)} />
-            <StatBox name="Bullet Damage" value={hero.bulletDamage} />
-            <StatBox name="Ammo" value={hero.ammo} />
-            <StatBox name="Bullets Per Sec" value={hero.bulletsPerSec} />
-            <StatBox name="Light Melee" value={hero.lightMelee} />
-            <StatBox name="Heavy Melee" value={hero.heavyMelee} />
-            <StatBox name="Health" value={hero.health} />
-            <StatBox name="Health Regen" value={hero.healthRegen} />
-            <StatBox name="Bullet Resist" value={hero.bulletResist} />
-            <StatBox name="Spirit Resist" value={hero.spiritResist} />
-            <StatBox name="Move Speed" value={hero.moveSpeed} />
-            <StatBox name="Sprint Speed" value={hero.sprintSpeed} />
-            <StatBox name="Stamina" value={hero.stamina} />
-          </div>
-        </div>
-
+          
           <div className="flex flex-col items-center">
 
           {/* Category Tabs */}
-            <div className="flex pb-3 gap-3">
+            <div className="flex w-full justify-start pb-3 gap-3">
               <div onClick={() => setActiveCategory("weapon")}
                 className="flex font-bold text-black py-1 px-3 justify-center items-center h-10 w-32 rounded-md bg-weapon hover:cursor-pointer">
                 Weapon
@@ -181,10 +184,6 @@ export default function Page({ params }: { params: { heroId: string } }) {
               <div onClick={() => setActiveCategory("spirit")}
                 className="flex font-bold text-black py-1 px-3 justify-center items-center h-10 w-32 rounded-md bg-spirit hover:cursor-pointer">
                 Spirit
-              </div>
-              <div className="flex font-bold text-black py-1 px-3 justify-center items-center h-10 w-72 rounded-md bg-offwhite">
-                <img className='h-5' src="/souls.png"></img>
-                  <input placeholder="500" className="border border-gray rounded-md"></input>
               </div>
               <div className="flex gap-1 justify-center items-center font-bold text-black py-1 px-3 h-10">
                 <a className="text-2xl h-10 p-1 rounded-sm bg-offwhite hover:cursor-pointer" onClick={() => setHero({type: "SUBTRACT_ABILITY_POINT", item: undefined})}>-</a>
@@ -276,10 +275,15 @@ export default function Page({ params }: { params: { heroId: string } }) {
           
           <div className="flex flex-col gap-4 items-center bg-dark rounded-md p-3">
             
+            <div className="flex gap-1 font-bold text-souls py-1 px-3 justify-center items-center h-10 w-32 rounded-md">
+              <img className='h-5' src="/souls.png"></img>
+              {totalCost}
+            </div>
+
             <div className="grid grid-cols-2 gap-2">
               {hero.inventory?.filter(item => item.category == "Weapon").map((item, index) => (
                 <ItemCardMini
-                  key={index}
+                  key={item.name}
                   name={`${item.name}`}
                   toggleItem={setHero}
                   item={items[item.name] as Item}
@@ -300,7 +304,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
             <div className="grid grid-cols-2 gap-2">
               {hero.inventory?.filter(item => item.category == "Vitality").map((item, index) => (
                 <ItemCardMini
-                  key={index}
+                  key={item.name}
                   name={`${item.name}`}
                   toggleItem={setHero}
                   item={items[item.name] as Item}
@@ -321,7 +325,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
             <div className="grid grid-cols-2 gap-2">
               {hero.inventory?.filter(item => item.category == "Spirit").map((item, index) => (
                 <ItemCardMini
-                  key={index}
+                  key={item.name}
                   name={`${item.name}`}
                   toggleItem={setHero}
                   item={items[item.name] as Item}
@@ -342,7 +346,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
             <div className="grid grid-cols-2 gap-2">
               {hero.inventory?.filter(item => item.isFlex == true).map((item, index) => (
                 <ItemCardMini
-                  key={index}
+                  key={item.name}
                   name={`${item.name}`}
                   toggleItem={setHero}
                   item={items[item.name] as Item}
@@ -351,21 +355,17 @@ export default function Page({ params }: { params: { heroId: string } }) {
 
             {/* Render empty item slots to fill up to 4 */}
             {(() => {
-              const itemCount = hero.inventory?.length || 0;
+              const itemCount = hero.inventory.filter(item => item?.isFlex == true).length || 0;
               const emptySlotsCount = Math.max(4 - itemCount, 0);
               
               return Array.from({ length: emptySlotsCount }).map((_, i) => (
-                <div className="bg-black rounded-md h-16 w-16">                
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#282828">
-                    <path d="M12 2C9.24 2 7 4.24 7 7v4H6c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5zm0 2c1.66 0 3 1.34 3 3v4H9V7c0-1.66 1.34-3 3-3zm-4 10h8v6H8v-6z"/>
-                  </svg>
-                </ div>                
-                ));
+                <div key={`empty-${i}`} className="h-16 w-16 bg-black rounded-md" />
+              ));
             })()}
             </div>
           </div>
       </div>
-      {/* TODO: I wish I didn't have to do this, but Tailwind keeps purging these styles because these styles are generated at runtime */}
+      {/* TODO: I wish I didn't have to do this, but Tailwind keeps purging these styles because these styles are created at compile time */}
       <div className="hidden bg-weapon-bg-1 bg-weapon-bg-2 bg-vitality-bg-1 bg-vitality-bg-2 bg-spirit-bg-1 bg-spirit-bg-2"></ div>
     </main>
   );

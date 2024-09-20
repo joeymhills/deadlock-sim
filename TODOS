@@ -6,6 +6,10 @@ GENERAL TODOS:
 
 -As complexity grows, I might need to introduce a "scheduler" that schedules events instead of leaving the events to schedule themselves;
 
+SIM NOTES:
+-Add channel time
+-autocast option
+
 -use steam api/0auth
 -add abilities + ability points
 -add items

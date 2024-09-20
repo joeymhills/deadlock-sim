@@ -6,13 +6,15 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ name }) => {
-  const imgName = name.replace(/\s+/g, '-');
+  function getImageName(str: string): string {
+      return str.replace(/\s+/g, '_') + ".png"
+  }
     return (
-      <Link href={`/build/${imgName}`} passHref>
+      <Link href={`/build/${name}`} passHref>
         <div
           className="flex justify-end items-center h-44 w-32 flex-col gap-2 p-4 bg-offwhite-dark rounded-sm shacow-xl hover:cursor-pointer"
           style={{
-            backgroundImage: `url(/heroCards/${imgName}.png)`,
+            backgroundImage: `url(/heroCards/${getImageName(name)})`,
             backgroundSize: 'cover', // Cover the entire div
             backgroundPosition: 'center', // Center the background image
           }} 
