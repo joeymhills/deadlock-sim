@@ -9,6 +9,7 @@ const isBrowser = typeof window !== "undefined";
 export const saveBuild = (hero: Hero, buildName: string) => {
     if (isBrowser) {
         localStorage.setItem(`${STORAGE_KEY_PREFIX}${buildName}`, JSON.stringify(hero));
+        alert("Build saved.");
     }
 };
 
@@ -25,6 +26,7 @@ export const loadBuild = (buildName: string): Hero | undefined => {
 export const deleteBuild = (buildName: string) => {
     if (isBrowser) {
         localStorage.removeItem(`${STORAGE_KEY_PREFIX}${buildName}`);
+        alert("Build deleted.");
     }
 };
 
@@ -35,6 +37,7 @@ export const renameBuild = (oldName: string, newName: string) => {
         if (savedBuild) {
             localStorage.setItem(`${STORAGE_KEY_PREFIX}${newName}`, savedBuild);
             localStorage.removeItem(`${STORAGE_KEY_PREFIX}${oldName}`);
+            alert("Build renamed.")
         }
     }
 };

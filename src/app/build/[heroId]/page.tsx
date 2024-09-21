@@ -136,10 +136,16 @@ export default function Page({ params }: { params: { heroId: string } }) {
   console.log(hero.name);
 
   return (
-    <main className="flex min-h-screen flex-col items-center bg-darker text-white">
-      
+      <main className="flex min-h-screen flex-col items-center bg-black/90 text-white"
+          style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/bg-deadlock.png)`,
+              backgroundSize: 'cover', // Cover the entire div
+              backgroundPosition: 'center', // Center the background image
+          }}
+      >
+    
       {/* Container */}
-      <div className="flex flex-row justify-start items-center gap-2 pt-16">
+      <div className="flex flex-row justify-start items-start gap-2 pt-16">
 
           {/* Hero Attributes */}
           <div className="flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 px-2">
@@ -174,7 +180,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
           <div className="flex flex-col items-center">
 
           {/* Category Tabs */}
-            <div className="flex w-full justify-start pb-3 gap-3">
+            <div className="flex w-full justify-start pb-2 gap-3">
               <div onClick={() => setActiveCategory("weapon")}
                 className="flex font-bold text-black py-1 px-3 justify-center items-center h-10 w-32 rounded-md bg-weapon hover:cursor-pointer">
                 Weapon
@@ -187,6 +193,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
                 className="flex font-bold text-black py-1 px-3 justify-center items-center h-10 w-32 rounded-md bg-spirit hover:cursor-pointer">
                 Spirit
               </div>
+              {/*
               <div className="flex gap-1 justify-center items-center font-bold text-black py-1 px-3 h-10">
                 <a className="text-2xl h-10 p-1 rounded-sm bg-offwhite hover:cursor-pointer" onClick={() => setHero({type: "SUBTRACT_ABILITY_POINT", item: undefined})}>-</a>
                 <div className="flex flex-row gap-2 h-10 p-2 justify-center rounded-sm bg-offwhite items-center">
@@ -200,6 +207,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
                 </div>
                 <a className="text-2xl h-10 p-1 rounded-sm bg-offwhite hover:cursor-pointer" onClick={() => setHero({type: "ADD_ABILITY_POINT", item: undefined})}>+</a>
               </div>
+              */}
             </div>
 
             {/* Item Shop */}
