@@ -5,7 +5,7 @@ import { ItemCard } from "~/components/ItemCard";
 import ItemCardMini from "~/components/ItemCardMini";
 import heroData from "~/heroes.json";
 import itemData from "~/items.json";
-import { Action, HeroAttributes, HeroAttributesMap, Item, ItemMap } from "~/types/types";
+import { Action, HeroAttributes, HeroAttributesMap, Item, ItemMap, DamageType, StatType } from "~/types/types";
 import { Hero } from "~/app/lib/Hero";
 import { useEffect, useState, useReducer, useRef } from "react";
 import { getImageName } from "~/utils";
@@ -36,14 +36,11 @@ function heroReducer(hero: Hero, action: Action): Hero {
       const newHero = {...hero}
       hero.inventory.forEach(item => {
         item.modifiers.forEach(modifier => {
+          const stat = modifier.stat;
           switch(modifier.modifier) {
-            case "*":
-              if (hero.bulletsPerSec) {
-                newHero.bulletDamage = hero.base.bulletDamage * modifier.value
-              }
-              break;
             case "+":
-              newHero.bulletDamage = hero.base.bulletDamage + modifier.value
+              //this is incorrect because we are adding the base stat on every time
+              newHero[stat] = hero.base[stat] + modifier.value
               break;
             case "-":
               newHero.bulletDamage = hero.base.bulletDamage - modifier.value

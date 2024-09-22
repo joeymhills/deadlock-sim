@@ -42,11 +42,42 @@ export interface Action {
 
 //Item types
 
-export type ModifierOperation = '-' | '+' | '*';
+export type ModifierOperation = '-' | '+';
 export type ModifierTuple = [ModifierOperation, number];
 
+export const StatTypes = {
+  bulletDamage: 'bulletDamage',
+  bulletsPerShot: 'bulletsPerShot',
+  ammo: 'ammo',
+  bulletsPerSec: 'bulletsPerSec',
+  lightMelee: 'lightMelee',
+  heavyMelee: 'heavyMelee',
+  health: 'health',
+  healthRegen: 'healthRegen',
+  bulletResist: 'bulletResist',
+  spiritResist: 'spiritResist',
+  moveSpeed: 'moveSpeed',
+  sprintSpeed: 'sprintSpeed',
+  stamina: 'stamina',
+  abilityRange: 'abilityRange',
+  cooldownReduction: 'cooldownReduction',
+  bulletLifesteal: 'bulletLifesteal',
+  spiritLifesteal: 'spiritLifesteal',
+  bulletShield: 'bulletShield',
+  spiritShield: 'spiritShield',
+  abilityPoints: 'abilityPoints',
+  spiritPower: 'spiritPower',
+} as const;
+export type StatType = typeof StatTypes[keyof typeof StatTypes];
+
+export const DamageTypes = {
+  bullet: 'bullet',
+  spirit: 'spirit'
+} as const;
+export type DamageType = typeof DamageTypes[keyof typeof DamageTypes];
+
 export type Modifier = {
-  stat: string;
+  stat: StatType;
   modifier: ModifierOperation
   value: number;
 }
