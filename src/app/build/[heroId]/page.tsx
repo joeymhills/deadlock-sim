@@ -13,7 +13,7 @@ import { saveBuild } from "~/app/lib/Builds";
 
 const StatBox: React.FC<{ name: string; value: number; icon: string }> = ({ name, value, icon }) => {
   return (
-    <div className="flex flex-col justify-start items-center">
+    <div className="flex flex-col justify-start items-center w-10">
       <div className="text-md text-center tracking-tight text-white">
         {Math.round(value)}
       </div>
@@ -25,6 +25,29 @@ const StatBox: React.FC<{ name: string; value: number; icon: string }> = ({ name
   );
 };
 
+//Function for applying item modifiers to hero
+function applyStats( hero: Hero, modifier: HeroAttributes): Hero {
+  hero.bulletDamage = hero.base.bulletDamage * modifier.bulletDamage;
+  hero.ammo = hero.base.ammo * modifier.ammo;
+  hero.health = hero.base.health * modifier.health;
+  hero.bonusHealth = hero.base.bonusHealth + modifier.bonusHealth;
+  hero.healthRegen = hero.base.healthRegen + modifier.healthRegen;
+  hero.bulletResist = hero.base.bulletResist * modifier.bulletResist;
+  hero.spiritResist = hero.base.spiritResist * modifier.spiritResist;
+  hero.moveSpeed = hero.base.moveSpeed + modifier.moveSpeed;
+  hero.sprintSpeed = hero.base.sprintSpeed + modifier.sprintSpeed;
+  hero.stamina = hero.base.stamina + modifier.stamina;
+  hero.abilityRange = hero.base.abilityRange * modifier.abilityRange;
+  hero.cooldownReduction = hero.base.cooldownReduction * modifier.cooldownReduction;
+  //TODO: this may need some attention eventually
+  hero.bulletLifesteal = hero.base.bulletLifesteal * modifier.bulletLifesteal;
+  hero.spiritLifesteal = hero.base.spiritLifesteal * modifier.spiritLifesteal;
+  hero.bulletShield = hero.base.bulletShield + modifier.bulletShield;
+  hero.spiritShield = hero.base.spiritShield + modifier.spiritShield;
+
+  return hero;
+}
+
 function heroReducer(hero: Hero, action: Action): Hero {
   switch (action.type) {
     //Holds all major logic for stat changes to hero
@@ -33,22 +56,59 @@ function heroReducer(hero: Hero, action: Action): Hero {
       if (hero.inventory.length === 0){
         return { ...hero, ...hero.base };
       }
-      const newHero = {...hero}
+
+      const newHero = {...hero};
+
+      let modifiers: HeroAttributes = {
+          name: "",
+          bulletDamage: 1,
+          bulletsPerShot: 0,
+          ammo: 1,
+          bulletsPerSec: 1,
+          lightMelee: 0,
+          heavyMelee: 0,
+          health: 1,
+          bonusHealth: 0,
+          healthRegen: 0,
+          bulletResist: 1,
+          spiritResist: 1,
+          moveSpeed: 0,
+          sprintSpeed: 0,
+          stamina: 0,
+          abilityRange: 1,
+          cooldownReduction: 1,
+          bulletLifesteal: 1,
+          spiritLifesteal: 1,
+          bulletShield: 0,
+          spiritShield: 0,
+
+          abilityPoints: 0,
+          spiritPower: 0,
+          spiritScaling: ["default", 0],
+          inventory: [],
+          bulletDamagePerLevel: 0,
+          meleeDamagePerLevel: 0,
+          healthPerLevel: 0,
+          flexSlots: 0,
+      };
+      // Iterates through items and accumulates the modifiers into a single object
       hero.inventory.forEach(item => {
         item.modifiers.forEach(modifier => {
           const stat = modifier.stat;
           switch(modifier.modifier) {
             case "+":
-              //this is incorrect because we are adding the base stat on every time
-              newHero[stat] = hero.base[stat] + modifier.value
+              modifiers[stat] += modifier.value
               break;
             case "-":
-              newHero.bulletDamage = hero.base.bulletDamage - modifier.value
+              modifiers[stat] -= modifier.value
               break;
           }
         })
       })
-      return newHero;
+      
+      const returnHero = applyStats(newHero, modifiers);
+
+      return returnHero;
 
     case 'TOGGLE_ITEM':
       if (action.item && hero.inventory?.includes(action.item)) {
@@ -130,8 +190,6 @@ export default function Page({ params }: { params: { heroId: string } }) {
 
   const [activeCategory, setActiveCategory] = useState<string>("weapon");
 
-  console.log(hero.name);
-
   return (
       <main className="flex min-h-screen flex-col items-center bg-black/90 text-white"
           style={{
@@ -164,7 +222,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
               <StatBox name="Bullets Per Sec" value={hero.bulletsPerSec} icon="Bullets_Per_Sec"/>
               <StatBox name="Light Melee" value={hero.lightMelee} icon="Melee_damage"/>
               <StatBox name="Heavy Melee" value={hero.heavyMelee} icon="Melee_damage"/>
-              <StatBox name="Health" value={hero.health} icon="Health"/>
+              <StatBox name="Health" value={hero.health + hero.bonusHealth} icon="Health"/>
               <StatBox name="Health Regen" value={hero.healthRegen} icon="Health_Regen"/>
               <StatBox name="Bullet Resist" value={hero.bulletResist} icon="Bullet_Armor"/>
               <StatBox name="Spirit Resist" value={hero.spiritResist} icon="Spirit_Armor"/>
@@ -177,7 +235,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
           <div className="flex flex-col items-center">
 
           {/* Category Tabs */}
-            <div className="flex w-full justify-start pb-2 gap-3">
+            <div className="flex w-full justify-center pb-2 gap-3">
               <div onClick={() => setActiveCategory("weapon")}
                 className="flex font-bold text-black py-1 px-3 justify-center items-center h-10 w-32 rounded-md bg-weapon hover:cursor-pointer">
                 Weapon

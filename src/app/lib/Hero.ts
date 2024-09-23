@@ -11,6 +11,7 @@ const defaultHeroAttributes: HeroAttributes = {
     lightMelee: 0,
     heavyMelee: 0,
     health: 0,
+    bonusHealth: 0,
     healthRegen: 0,
     bulletResist: 0,
     spiritResist: 0,
@@ -42,6 +43,7 @@ export class Hero {
     lightMelee: number;
     heavyMelee: number;
     health: number;
+    bonusHealth: number;
     healthRegen: number;
     bulletResist: number;
     spiritResist: number;
@@ -76,6 +78,7 @@ export class Hero {
         this.lightMelee = data.lightMelee!;
         this.heavyMelee = data.heavyMelee!;
         this.health = data.health!;
+        this.bonusHealth = data.bonusHealth!;
         this.healthRegen = data.healthRegen!;
         this.bulletResist = data.bulletResist!;
         this.spiritResist = data.spiritResist!;

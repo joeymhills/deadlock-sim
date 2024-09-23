@@ -8,6 +8,7 @@ export interface HeroAttributes {
   lightMelee: number;
   heavyMelee: number;
   health: number;
+  bonusHealth: number;
   healthRegen: number;
   bulletResist: number;
   spiritResist: number;
@@ -82,7 +83,7 @@ export type Modifier = {
   value: number;
 }
 
-export type EffectCondition = "headshot" | "range" | "health" | undefined;
+export type EffectCondition = "headshot" | "range" | "ownerHealth" | "targetHealth" | undefined;
 
 export interface ItemPassives {
   modifiers: Modifier[]

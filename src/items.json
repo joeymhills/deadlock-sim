@@ -6,14 +6,14 @@
       "cost": 500,
       "modifiers": [
         {
-          "stat": "moveSpeed",
-          "modifier": "*",
-          "value": 1.24
+          "stat": "ammo",
+          "modifier": "+",
+          "value": 0.24
         },
         {
-          "stat": "stamina",
-          "modifier": "*",
-          "value": 1.15
+          "stat": "bulletDamage",
+          "modifier": "+",
+          "value": 0.15
         }
       ],
       "passives": {},
@@ -32,7 +32,13 @@
           "value": 85
         }
       ],
-      "passives": {},
+      "passives": [
+        {
+          "stat": "bulletDamage",
+          "modifier": "+",
+          "value": 0.25
+        }
+    ],
       "actives": {},
       "debuffs": {}
     },
@@ -44,8 +50,8 @@
       "modifiers": [
         {
           "stat": "bulletsPerSec",
-          "modifier": "*",
-          "value": 1.15
+          "modifier": "+",
+          "value": 0.15
         },
         {
           "stat": "bulletSheild",
@@ -65,8 +71,8 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "modifier": "+",
+          "value": 0.14
         },
         {
           "stat": "bulletSheild",
@@ -86,14 +92,14 @@
       "cost": 500,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "spiritShield",
+          "modifier": "+",
+          "value": 85
         },
         {
-          "stat": "bulletSheild",
+          "stat": "spiritPower",
           "modifier": "+",
-          "value": 50
+          "value": 4 
         }
       ],
       "passives": {},
@@ -814,6 +820,8 @@
         "actives": {},
         "debuffs": {}
     },
+
+
     "Enduring Spirit": {
         "name": "Enduring Spirit",
         "category": "Vitality",
@@ -822,8 +830,8 @@
         "modifiers": [
             {
                 "stat": "spiritLifesteal",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             },
             {
                 "stat": "spiritPower",
@@ -831,7 +839,7 @@
                 "value": 4 
             },
             {
-                "stat": "health",
+                "stat": "bonusHealth",
                 "modifier": "+",
                 "value": 75 
             }
@@ -848,11 +856,11 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
-                "stat": "health",
+                "stat": "bonusHealth",
                 "modifier": "+",
                 "value": 160 
             }
