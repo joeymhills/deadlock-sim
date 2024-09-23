@@ -191,14 +191,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
   const [activeCategory, setActiveCategory] = useState<string>("weapon");
 
   return (
-      <main className="flex min-h-screen flex-col items-center bg-black/90 text-white"
-          style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/bg-deadlock.png)`,
-              backgroundSize: 'cover', // Cover the entire div
-              backgroundPosition: 'center', // Center the background image
-          }}
-      >
-    
+      <main className="flex min-h-screen flex-col items-center text-white">
       {/* Container */}
       <div className="flex flex-row justify-start items-start gap-2 pt-16">
 

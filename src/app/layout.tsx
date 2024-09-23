@@ -15,7 +15,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="font-colus text-offwhite">
-      <body>
+      <body className="bg-black/90 "
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/bg-deadlock.png)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          minHeight: '100vh',
+          margin: 0,
+        }}
+      >
         <Navbar />
         {children}
       </body>
