@@ -113,14 +113,14 @@
       "cost": 500,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "bonusHealth",
+          "modifier": "+",
+          "value": 50 
         },
         {
-          "stat": "bulletSheild",
+          "stat": "healthRegen",
           "modifier": "+",
-          "value": 50
+          "value": 1 
         }
       ],
       "passives": {},
@@ -134,14 +134,19 @@
       "cost": 500,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "bulletsPerSec",
+          "modifier": "+",
+          "value": 0.12
         },
         {
-          "stat": "bulletSheild",
+          "stat": "sprintSpeed",
           "modifier": "+",
-          "value": 50
+          "value": 1 
+        },
+        {
+          "stat": "bonusHealth",
+          "modifier": "-",
+          "value": 50 
         }
       ],
       "passives": {},
@@ -155,14 +160,14 @@
       "cost": 500,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "bulletResist",
+          "modifier": "+",
+          "value": 0.07
         },
         {
-          "stat": "bulletSheild",
+          "stat": "weaponDamage",
           "modifier": "+",
-          "value": 50
+          "value": 0.08
         }
       ],
       "passives": {},
@@ -176,9 +181,9 @@
       "cost": 1250,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "weaponDamage",
+          "modifier": "+",
+          "value": 0.10
         },
         {
           "stat": "bulletSheild",
@@ -197,14 +202,14 @@
       "cost": 1250,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "ammo",
+          "modifier": "+",
+          "value": 4
         },
         {
-          "stat": "bulletSheild",
+          "stat": "bulletResist",
           "modifier": "+",
-          "value": 50
+          "value": 0.08
         }
       ],
       "passives": {},
@@ -218,14 +223,14 @@
       "cost": 1250,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "bonusHealth",
+          "modifier": "+",
+          "value": 100
         },
         {
-          "stat": "bulletSheild",
+          "stat": "healthRegen",
           "modifier": "+",
-          "value": 50
+          "value": 0.5
         }
       ],
       "passives": {},
@@ -239,14 +244,9 @@
       "cost": 1250,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
-        },
-        {
           "stat": "bulletSheild",
           "modifier": "+",
-          "value": 50
+          "value": 90 
         }
       ],
       "passives": {},
@@ -261,13 +261,18 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "modifier": "+",
+          "value": 0.15
         },
         {
-          "stat": "bulletSheild",
+          "stat": "bonusHealth",
           "modifier": "+",
-          "value": 50
+          "value": 100
+        },
+        {
+          "stat": "healthRegen",
+          "modifier": "+",
+          "value": 1
         }
       ],
       "passives": {},
@@ -282,13 +287,13 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "modifier": "+",
+          "value": 0.12
         },
         {
-          "stat": "bulletSheild",
+          "stat": "spiritPower",
           "modifier": "+",
-          "value": 50
+          "value": 4
         }
       ],
       "passives": {},
@@ -303,13 +308,13 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "modifier": "+",
+          "value": 0.16
         },
         {
-          "stat": "bulletSheild",
+          "stat": "spiritPower",
           "modifier": "+",
-          "value": 50
+          "value": 5
         }
       ],
       "passives": {},
@@ -324,13 +329,8 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
-        },
-        {
-          "stat": "bulletSheild",
           "modifier": "+",
-          "value": 50
+          "value": 0.06
         }
       ],
       "passives": {},
@@ -344,14 +344,14 @@
       "cost": 1250,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "bulletsPerSec",
+          "modifier": "+",
+          "value": 0.22
         },
         {
-          "stat": "bulletSheild",
-          "modifier": "+",
-          "value": 50
+          "stat": "bulletResist",
+          "modifier": "-",
+          "value": 0.05
         }
       ],
       "passives": {},
@@ -365,9 +365,9 @@
       "cost": 1250,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "bonusHealth",
+          "modifier": "+",
+          "value": 75
         },
         {
           "stat": "bulletSheild",
@@ -387,8 +387,8 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "modifier": "+",
+          "value": 0.14
         },
         {
           "stat": "bulletSheild",
@@ -408,13 +408,13 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "modifier": "+",
+          "value": 0.14
         },
         {
-          "stat": "bulletSheild",
+          "stat": "bulletsPerSec",
           "modifier": "+",
-          "value": 50
+          "value": 0.14
         }
       ],
       "passives": {},
@@ -429,13 +429,13 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "modifier": "+",
+          "value": 0.15
         },
         {
           "stat": "bulletSheild",
           "modifier": "+",
-          "value": 50
+          "value": 150
         }
       ],
       "passives": {},
@@ -449,14 +449,9 @@
       "cost": 3000,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
-        },
-        {
           "stat": "bulletSheild",
           "modifier": "+",
-          "value": 50
+          "value": 150
         }
       ],
       "passives": {},
@@ -471,13 +466,8 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
-        },
-        {
-          "stat": "bulletSheild",
           "modifier": "+",
-          "value": 50
+          "value": 0.20
         }
       ],
       "passives": {},
@@ -488,17 +478,17 @@
       "name": "Point Blank",
       "category": "Weapon",
       "tier": 3,
-      "cost": 3000,
+      "cost": 3500,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "stat": "bulletResist",
+          "modifier": "+",
+          "value": 0.15
         },
         {
-          "stat": "bulletSheild",
+          "stat": "stamina",
           "modifier": "+",
-          "value": 50
+          "value": 1
         }
       ],
       "passives": {},
@@ -513,13 +503,18 @@
       "modifiers": [
         {
           "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
+          "modifier": "+",
+          "value": 0.25
         },
         {
-          "stat": "bulletSheild",
+          "stat": "spiritPower",
           "modifier": "+",
-          "value": 50
+          "value": 12
+        },
+        {
+          "stat": "spiritResist",
+          "modifier": "+",
+          "value": 0.12
         }
       ],
       "passives": {},
@@ -533,14 +528,9 @@
       "cost": 4250,
       "modifiers": [
         {
-          "stat": "bulletDamage",
-          "modifier": "*",
-          "value": 1.14
-        },
-        {
           "stat": "bulletSheild",
           "modifier": "+",
-          "value": 50
+          "value": 175
         }
       ],
       "passives": {},
@@ -554,14 +544,9 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
-            },
-            {
-                "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "stat": "bulletsPerSec",
+                "modifier": "+",
+                "value": 0.14
             }
         ],
         "passives": {},
@@ -575,14 +560,9 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
-            },
-            {
-                "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "stat": "bonusHealth",
+                "modifier": "+",
+                "value": 100
             }
         ],
         "passives": {},
@@ -597,13 +577,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -618,13 +598,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -639,13 +619,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -660,13 +640,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -681,13 +661,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -702,13 +682,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -723,13 +703,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -744,13 +724,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -765,13 +745,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -786,13 +766,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -807,13 +787,13 @@
         "modifiers": [
             {
                 "stat": "bulletResist",
-                "modifier": "*",
-                "value": 1.07
+                "modifier": "+",
+                "value": 0.07
             },
             {
                 "stat": "bulletDamage",
-                "modifier": "*",
-                "value": 1.08
+                "modifier": "+",
+                "value": 0.08
             }
         ],
         "passives": {},
@@ -878,8 +858,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -899,8 +879,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -920,8 +900,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -941,8 +921,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -962,8 +942,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -984,8 +964,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1006,8 +986,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1027,8 +1007,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1048,8 +1028,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1069,8 +1049,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1090,8 +1070,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1111,8 +1091,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1132,8 +1112,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1153,8 +1133,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1174,8 +1154,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1195,8 +1175,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1216,8 +1196,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1237,8 +1217,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1258,8 +1238,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1279,8 +1259,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1300,8 +1280,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1321,8 +1301,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1342,8 +1322,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1363,8 +1343,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1384,8 +1364,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1405,8 +1385,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1426,8 +1406,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1447,8 +1427,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1468,8 +1448,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1489,8 +1469,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1510,8 +1490,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1531,8 +1511,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1552,8 +1532,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1574,8 +1554,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1596,8 +1576,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1618,8 +1598,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1640,8 +1620,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1662,8 +1642,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1684,8 +1664,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1705,8 +1685,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1726,8 +1706,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1747,8 +1727,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1768,8 +1748,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1789,8 +1769,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1810,8 +1790,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1831,8 +1811,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1852,8 +1832,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1873,8 +1853,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1894,8 +1874,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1915,8 +1895,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1936,8 +1916,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1957,8 +1937,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1978,8 +1958,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -1999,8 +1979,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2020,8 +2000,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2041,8 +2021,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2062,8 +2042,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2083,8 +2063,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2104,8 +2084,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2125,8 +2105,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2146,8 +2126,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2167,8 +2147,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2188,8 +2168,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2209,8 +2189,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2230,8 +2210,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2251,8 +2231,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2272,8 +2252,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2293,8 +2273,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2314,8 +2294,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2335,8 +2315,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2356,8 +2336,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2377,8 +2357,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2398,8 +2378,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2419,8 +2399,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",
@@ -2440,8 +2420,8 @@
         "modifiers": [
             {
                 "stat": "weaponDamage",
-                "modifier": "*",
-                "value": 1.05
+                "modifier": "+",
+                "value": 0.05
             },
             {
                 "stat": "health",

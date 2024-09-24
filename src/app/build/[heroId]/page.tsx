@@ -204,9 +204,9 @@ export default function Page({ params }: { params: { heroId: string } }) {
                 <input
                   value={buildName}
                   onChange={e => setBuildName(e.target.value)}
-                  placeholder="Enter build name" className="text-sm rounded-md text-black h-6 w-36"
+                  placeholder=" Enter build name" className="text-sm rounded-md text-black h-6 w-36"
                   ></input>
-                  <button onClick={() => saveBuild(hero, buildName)} className="text-black text-md w-32 bg-offwhite hover:bg-opacity-70 rounded-md">Save Build</button>
+                  <button onClick={() => saveBuild(hero, buildName)} className="text-black text-md w-36 bg-offwhite hover:bg-opacity-70 rounded-md">Save Build</button>
               </div>
               </div>
             <div className="w-full flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 p-2">
