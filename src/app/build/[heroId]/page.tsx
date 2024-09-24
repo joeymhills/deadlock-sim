@@ -317,11 +317,11 @@ export default function Page({ params }: { params: { heroId: string } }) {
               })}
             </div>
           </div>
+
         {/* Item Inventory */}
-          
           <div className="flex flex-col gap-4 items-center bg-dark rounded-md p-3">
             
-            <div className="flex gap-1 font-bold text-souls py-1 px-3 justify-center items-center h-10 w-36 rounded-md">
+            <div className="flex gap-1 font-bold text-souls py-1 px-3 justify-center items-center h-6 w-32 rounded-md">
               <img className='h-5' src="/souls.png"></img>
               {totalCost}
             </div>

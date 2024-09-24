@@ -22,6 +22,8 @@ export default function RootLayout({
           backgroundPosition: 'center',
           minHeight: '100vh',
           margin: 0,
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
         }}
       >
         <Navbar />

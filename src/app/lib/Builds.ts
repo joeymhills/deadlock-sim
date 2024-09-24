@@ -7,10 +7,15 @@ const isBrowser = typeof window !== "undefined";
 
 // Save a hero build
 export const saveBuild = (hero: Hero, buildName: string) => {
-    if (isBrowser) {
+    if (isBrowser && !localStorage.getItem(`${STORAGE_KEY_PREFIX}${buildName}`)) {
         localStorage.setItem(`${STORAGE_KEY_PREFIX}${buildName}`, JSON.stringify(hero));
         alert("Build saved.");
+    } else if (isBrowser && localStorage.getItem(`${STORAGE_KEY_PREFIX}${buildName}`)) {
+        alert("A build of that named already exists. Please choose a new name");
+    } else {
+        alert("Error in saveBuild");
     }
+
 };
 
 // Load a hero build
