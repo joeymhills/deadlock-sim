@@ -191,44 +191,47 @@ export default function Page({ params }: { params: { heroId: string } }) {
   const [activeCategory, setActiveCategory] = useState<string>("weapon");
 
   return (
-      <main className="flex min-h-screen flex-col items-center text-white">
+    <main className="flex min-h-screen flex-col items-center text-white">
       {/* Container */}
       <div className="flex flex-row justify-start items-start gap-2 pt-16">
-
           {/* Hero Attributes */}
-          <div className="flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 mt-12 px-2">
-            <div>
-              <img className="h-44 rounded-md" src={`/heroCards/${getImageName(hero.name)}`} />
-            </div>
-            <div className="p-1 flex flex-col justify-center items-center gap-2">
-              <input
-                value={buildName}
-                onChange={e => setBuildName(e.target.value)}
-                placeholder="Enter build name" className="text-sm rounded-md text-black h-6 w-36"
-                ></input>
-                <button onClick={() => saveBuild(hero, buildName)} className="text-black text-md w-32 bg-offwhite hover:bg-opacity-70 rounded-md">Save Build</button>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <StatBox name="DPS" value={Math.floor(hero.bulletDamage * hero.bulletsPerSec * hero.bulletsPerShot)} icon="Damage_Per_Sec" />
-              <StatBox name="Bullet Damage" value={hero.bulletDamage} icon="Bullet_damage"/>
-              <StatBox name="Ammo" value={hero.ammo} icon="Ammo"/>
-              <StatBox name="Bullets Per Sec" value={hero.bulletsPerSec} icon="Bullets_Per_Sec"/>
-              <StatBox name="Light Melee" value={hero.lightMelee} icon="Melee_damage"/>
-              <StatBox name="Heavy Melee" value={hero.heavyMelee} icon="Melee_damage"/>
-              <StatBox name="Health" value={hero.health + hero.bonusHealth} icon="Health"/>
-              <StatBox name="Health Regen" value={hero.healthRegen} icon="Health_Regen"/>
-              <StatBox name="Bullet Resist" value={hero.bulletResist} icon="Bullet_Armor"/>
-              <StatBox name="Spirit Resist" value={hero.spiritResist} icon="Spirit_Armor"/>
-              <StatBox name="Move Speed" value={hero.moveSpeed} icon="Move_speed"/>
-              <StatBox name="Sprint Speed" value={hero.sprintSpeed} icon="Move_speed"/>
-              <StatBox name="Stamina" value={hero.stamina} icon="Stamina"/>
+          <div className="flex flex-col gap-3 w-40">
+            <div className="w-full flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 p-2">
+              <div>
+                <img className="h-44 rounded-md" src={`/heroCards/${getImageName(hero.name)}`} />
+              </div>
+              <div className="p-1 flex flex-col justify-center items-center gap-2">
+                <input
+                  value={buildName}
+                  onChange={e => setBuildName(e.target.value)}
+                  placeholder="Enter build name" className="text-sm rounded-md text-black h-6 w-36"
+                  ></input>
+                  <button onClick={() => saveBuild(hero, buildName)} className="text-black text-md w-32 bg-offwhite hover:bg-opacity-70 rounded-md">Save Build</button>
+              </div>
+              </div>
+            <div className="w-full flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 p-2">
+              <div className="grid grid-cols-2 gap-2">
+                <StatBox name="DPS" value={Math.floor(hero.bulletDamage * hero.bulletsPerSec * hero.bulletsPerShot)} icon="Damage_Per_Sec" />
+                <StatBox name="Bullet Damage" value={hero.bulletDamage} icon="Bullet_damage"/>
+                <StatBox name="Ammo" value={hero.ammo} icon="Ammo"/>
+                <StatBox name="Bullets Per Sec" value={hero.bulletsPerSec} icon="Bullets_Per_Sec"/>
+                <StatBox name="Light Melee" value={hero.lightMelee} icon="Melee_damage"/>
+                <StatBox name="Heavy Melee" value={hero.heavyMelee} icon="Melee_damage"/>
+                <StatBox name="Health" value={hero.health + hero.bonusHealth} icon="Health"/>
+                <StatBox name="Health Regen" value={hero.healthRegen} icon="Health_Regen"/>
+                <StatBox name="Bullet Resist" value={hero.bulletResist} icon="Bullet_Armor"/>
+                <StatBox name="Spirit Resist" value={hero.spiritResist} icon="Spirit_Armor"/>
+                <StatBox name="Move Speed" value={hero.moveSpeed} icon="Move_speed"/>
+                <StatBox name="Sprint Speed" value={hero.sprintSpeed} icon="Move_speed"/>
+                <StatBox name="Stamina" value={hero.stamina} icon="Stamina"/>
+              </div>
             </div>
           </div>
           
+          {/* Item Shop*/} 
           <div className="flex flex-col items-center">
-
-          {/* Category Tabs */}
-            <div className="flex w-full justify-center pb-2 gap-3">
+            {/* Category Tabs */}
+            <div className={`flex w-full bg-${activeCategory}-bg-1 rounded-t-xl justify-center pt-1 gap-3`}>
               <div onClick={() => setActiveCategory("weapon")}
                 className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-10 w-32 rounded-md bg-weapon hover:shadow-lg hover:cursor-pointer">
                 <img className="w-5" src="/Weapon.png"></img>
@@ -244,27 +247,10 @@ export default function Page({ params }: { params: { heroId: string } }) {
                 <img className="w-5" src="/Spirit.png"></img>
                 Spirit
               </div>
-              {/*
-              <div className="flex gap-1 justify-center items-center font-bold text-black py-1 px-3 h-10">
-                <a className="text-2xl h-10 p-1 rounded-sm bg-offwhite hover:cursor-pointer" onClick={() => setHero({type: "SUBTRACT_ABILITY_POINT", item: undefined})}>-</a>
-                <div className="flex flex-row gap-2 h-10 p-2 justify-center rounded-sm bg-offwhite items-center">
-                  
-                  <div className="bg-spirit p-1 rounded-sm bg-offwhite">
-                    <img className='h-3' src="/Ability_Point.png"></img>
-                  </div>
-                  <div className="">
-                    {hero.abilityPoints}
-                  </div>
-                </div>
-                <a className="text-2xl h-10 p-1 rounded-sm bg-offwhite hover:cursor-pointer" onClick={() => setHero({type: "ADD_ABILITY_POINT", item: undefined})}>+</a>
-              </div>
-              */}
             </div>
 
-            {/* Item Shop */}
-
             {/* Tier 1 */} 
-            <div className={`grid grid-cols-9 p-2 bg-${activeCategory}-bg-1 rounded-t-xl gap-2`}>
+            <div className={`grid grid-cols-9 p-2 bg-${activeCategory}-bg-1 gap-2`}>
               <div className='flex flex-row justify-center items-center row-span-2 font-bold text-souls -rotate-90 gap-2'><img className='h-5' src="/souls.png"></img>500</div>
                 {items && Object.entries(items).map(([key, item]) => {
                   if (item.tier === 1 && item.category.toLowerCase() == activeCategory) {
@@ -331,12 +317,11 @@ export default function Page({ params }: { params: { heroId: string } }) {
               })}
             </div>
           </div>
-
         {/* Item Inventory */}
           
-          <div className="flex flex-col gap-4 items-center bg-dark rounded-md mt-12 p-3">
+          <div className="flex flex-col gap-4 items-center bg-dark rounded-md p-3">
             
-            <div className="flex gap-1 font-bold text-souls py-1 px-3 justify-center items-center h-10 w-32 rounded-md">
+            <div className="flex gap-1 font-bold text-souls py-1 px-3 justify-center items-center h-10 w-36 rounded-md">
               <img className='h-5' src="/souls.png"></img>
               {totalCost}
             </div>
@@ -425,6 +410,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
             })()}
             </div>
           </div>
+          
       </div>
       {/* TODO: I wish I didn't have to do this, but Tailwind keeps purging these styles because these styles are created at compile time */}
       <div className="hidden bg-weapon-bg-1 bg-weapon-bg-2 bg-vitality-bg-1 bg-vitality-bg-2 bg-spirit-bg-1 bg-spirit-bg-2"></ div>
