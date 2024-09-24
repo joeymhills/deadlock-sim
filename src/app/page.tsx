@@ -14,11 +14,10 @@ export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center text-white">
       <div className="">
-        <div className="container flex flex-col items-center justify-center gap-6 px-4 py-16"
-            >
+        <div className="container flex flex-col items-center justify-center gap-6 px-4 py-16">
           <div className="grid lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-3 gap-4 pt-3">
             {heroes.map(hero => (
-            <Card key={hero} name={hero} />
+              <Card key={hero} name={hero} />
             ))}
           </div>
         </div>

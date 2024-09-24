@@ -26,7 +26,7 @@ export default function SimPage() {
                 <h1 className="text-3xl">Select your builds</h1>
                 <a onClick={()=> setHeroList([])} className="text-black bg-offwhite p-1 rounded-md shadow-xl hover:cursor-pointer hover:bg-opacity-80">Reset Selections</a>
                 {heroList.length < 2 ? (
-                    <div className="flex flex-row gap-5">
+                    <div className="flex flex-row gap-5 animate-fadeIn">
                         {buildNames?.map(build => (
                             <div onClick={() => addBuild(build)}>
                                 <BuildCard buildName={build} hero={loadBuild(build) as Hero} />
@@ -37,7 +37,9 @@ export default function SimPage() {
                 ) : (
                     <div>
                         {heroList.length == 2 ? (
-                            <SimComponent heroAData={heroList[0] as Hero} heroBData={heroList[1] as Hero} />
+                            <div className="animate-fadeIn">
+                                <SimComponent heroAData={heroList[0] as Hero} heroBData={heroList[1] as Hero} />
+                            </div>
                         ) : <div></div>
                         }
                     </ div>

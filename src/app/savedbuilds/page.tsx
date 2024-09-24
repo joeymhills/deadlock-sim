@@ -6,7 +6,7 @@ export default function HomePage() {
   const buildNames: string[] = getSavedBuilds();
 
   return (
-    <main className="flex min-h-screen flex-col items-center text-white">
+    <main className="flex min-h-screen flex-col items-center text-white animate-fadeIn">
       <div className="">
         <div className="container flex flex-col items-center justify-center gap-6 px-4 py-16">
           <div className="grid lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-3 gap-4">

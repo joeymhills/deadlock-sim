@@ -193,7 +193,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
   return (
     <main className="flex min-h-screen flex-col items-center text-white">
       {/* Container */}
-      <div className="flex flex-row justify-start items-start gap-2 pt-16">
+      <div className="flex flex-row justify-start items-start gap-2 pt-16 animate-fadeIn">
           {/* Hero Attributes */}
           <div className="flex flex-col gap-3 w-40">
             <div className="w-full flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 p-2">

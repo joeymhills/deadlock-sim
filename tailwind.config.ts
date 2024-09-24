@@ -11,6 +11,15 @@ export default {
   },
   theme: {
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn .5s ease-in-out',
+      },
       gradientColorStops: {
         'primary': '#4C1D95', // Custom color stops
         'secondary': '#34D399',
