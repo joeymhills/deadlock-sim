@@ -26,3 +26,8 @@ Weapon:
 - Always percentage based(just add percentages and apply at the end);
 Spirit:
 - Always additive;
+
+NITPICKY UI SHIT:
+- Remove state for hovering(i.e. replace with hover:bg-opacity-50)
+- add loaders before fonts load to prevent ui shift
+- add loaders and animations for everything else

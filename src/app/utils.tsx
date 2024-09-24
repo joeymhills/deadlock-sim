@@ -1,16 +1,15 @@
-import { Item, ModifierTuple } from "~/types/types";
+import { Modifier, Item, ModifierTuple } from "~/types/types";
 
-export function displayModifier(tuple: ModifierTuple) {
-    if (tuple[0] == "*") {
-       const percentage = (tuple[1] - 1) * 100;
-       const sign = percentage >= 0 ? '+' : ''; // Add + sign for positive values
-       return `${sign}${percentage.toFixed(0)}%`; // Round to 0 decimal places
-    }
-
-    if (tuple[0] == "+" || "-") {
-       return(
-            <span>{tuple[0]} {tuple[1]}</span>
-       )
-    }
-
+// Hacky was of determing if I need to display the stat change as a percentage or a whole number.
+// Need to add a way to display the stat name more pretty, might create an in memory map that maps the names to their pretty names
+export function displayModifier(modifier: Modifier) {
+   if (modifier && modifier.value % 1 == 0) {
+      return (
+            <p>{modifier.stat} {modifier.modifier} {modifier.value}</p>
+      )
+   } else if (modifier && modifier.value % 1 != 0) {
+      return (
+            <p>{modifier.stat}: {modifier.modifier} {Math.round(modifier.value*100)}%</p>
+      )
+   }
 }

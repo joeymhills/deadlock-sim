@@ -3,20 +3,6 @@ import { Item, Action, Modifier, ModifierTuple, ModifierOperation, ItemComponent
 import { displayModifier } from '~/app/utils';
 
 export const ItemCard: React.FC<ItemComponentProps> = ({ item, toggleItem }) => {
-    // Hacky was of determing if I need to display the stat change as a percentage or a whole number.
-    
-    // Need to add a way to display the stat name more pretty, might create an in memory map that maps the names to their pretty names
-    function displayModifier(modifier: Modifier) {
-        if (modifier && modifier.value % 1 == 0) {
-            return (
-                <p>{modifier.stat} {modifier.modifier} {modifier.value}</p>
-            )
-        } else if (modifier && modifier.value % 1 != 0) {
-            return (
-                <p>{modifier.stat} {modifier.modifier} {Math.round(modifier.value*100)}%</p>
-            )
-        }
-    }
     const { category, cost, modifiers, passives, actives } = item;
     const imgName = "/items/" + category.toLowerCase() + "/" + item.name.replace(/\s+/g, '_') + ".png";
     const action: Action = { item, type: 'TOGGLE_ITEM' };

@@ -196,19 +196,19 @@ export default function Page({ params }: { params: { heroId: string } }) {
       <div className="flex flex-row justify-start items-start gap-2 pt-16">
 
           {/* Hero Attributes */}
-          <div className="flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 px-2">
+          <div className="flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 mt-12 px-2">
             <div>
-              <img className="p-1 pt-4 h-24 rounded-md" src={`/heroCards/${getImageName(hero.name)}`} />
+              <img className="h-44 rounded-md" src={`/heroCards/${getImageName(hero.name)}`} />
             </div>
-            <div className="p-1 flex flex-row justify-center items-center gap-1">
+            <div className="p-1 flex flex-col justify-center items-center gap-2">
               <input
                 value={buildName}
                 onChange={e => setBuildName(e.target.value)}
                 placeholder="Enter build name" className="text-sm rounded-md text-black h-6 w-36"
                 ></input>
-                <button onClick={() => saveBuild(hero, buildName)} className="text-white text-sm h-6 w-12 bg-darker rounded-md">Save</button>
+                <button onClick={() => saveBuild(hero, buildName)} className="text-black text-md w-32 bg-offwhite hover:bg-opacity-70 rounded-md">Save Build</button>
             </div>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 gap-2">
               <StatBox name="DPS" value={Math.floor(hero.bulletDamage * hero.bulletsPerSec * hero.bulletsPerShot)} icon="Damage_Per_Sec" />
               <StatBox name="Bullet Damage" value={hero.bulletDamage} icon="Bullet_damage"/>
               <StatBox name="Ammo" value={hero.ammo} icon="Ammo"/>
@@ -230,15 +230,18 @@ export default function Page({ params }: { params: { heroId: string } }) {
           {/* Category Tabs */}
             <div className="flex w-full justify-center pb-2 gap-3">
               <div onClick={() => setActiveCategory("weapon")}
-                className="flex font-bold text-black py-1 px-3 justify-center items-center h-10 w-32 rounded-md bg-weapon hover:cursor-pointer">
+                className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-10 w-32 rounded-md bg-weapon hover:shadow-lg hover:cursor-pointer">
+                <img className="w-5" src="/Weapon.png"></img>
                 Weapon
               </div>
               <div onClick={() => setActiveCategory("vitality")}
-                className="flex font-bold text-black py-1 px-3 justify-center items-center h-10 w-32 rounded-md bg-vitality hover:cursor-pointer">
+                className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-10 w-32 rounded-md hover:shadow-lg bg-vitality hover:cursor-pointer">
+                <img className="w-5" src="/Vitality.png"></img>
                 Vitality
               </div>
               <div onClick={() => setActiveCategory("spirit")}
-                className="flex font-bold text-black py-1 px-3 justify-center items-center h-10 w-32 rounded-md bg-spirit hover:cursor-pointer">
+                className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-10 w-32 rounded-md hover:shadow-lg bg-spirit hover:cursor-pointer">
+                <img className="w-5" src="/Spirit.png"></img>
                 Spirit
               </div>
               {/*
@@ -331,7 +334,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
 
         {/* Item Inventory */}
           
-          <div className="flex flex-col gap-4 items-center bg-dark rounded-md p-3">
+          <div className="flex flex-col gap-4 items-center bg-dark rounded-md mt-12 p-3">
             
             <div className="flex gap-1 font-bold text-souls py-1 px-3 justify-center items-center h-10 w-32 rounded-md">
               <img className='h-5' src="/souls.png"></img>
