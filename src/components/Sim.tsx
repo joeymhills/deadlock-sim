@@ -405,7 +405,7 @@ interface SimProps {
             {/* Max might not be accurate when health is increased by items*/}
             <progress id="health" value={heroADisplay.health} max={heroADisplay.base.health}></progress>
 
-            <button onClick={() => scheduleEvent(heroAability1())}>Use Ability 1</button>
+            {/*<button onClick={() => scheduleEvent(heroAability1())}>Use Ability 1</button>*/}
           </div>
   
           <div className="flex flex-col justify-center items-center">

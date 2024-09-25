@@ -576,14 +576,9 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "bulletResist",
+                "stat": "bonusHealth",
                 "modifier": "+",
-                "value": 0.07
-            },
-            {
-                "stat": "bulletDamage",
-                "modifier": "+",
-                "value": 0.08
+                "value": 100
             }
         ],
         "passives": {},
@@ -597,14 +592,19 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "bulletResist",
+                "stat": "bulletSheild",
                 "modifier": "+",
-                "value": 0.07
+                "value": 225
+            },
+            {
+                "stat": "spiritPower",
+                "modifier": "+",
+                "value": 7
             },
             {
                 "stat": "bulletDamage",
                 "modifier": "+",
-                "value": 0.08
+                "value": 0.14
             }
         ],
         "passives": {},
@@ -618,14 +618,19 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "bulletResist",
+                "stat": "bulletLifesteal",
                 "modifier": "+",
-                "value": 0.07
+                "value": 0.20 
             },
             {
-                "stat": "bulletDamage",
+                "stat": "bonusHealth",
                 "modifier": "+",
-                "value": 0.08
+                "value": 150
+            },
+            {
+                "stat": "moveSpeed",
+                "modifier": "+",
+                "value": 1
             }
         ],
         "passives": {},
@@ -639,14 +644,14 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "bulletResist",
-                "modifier": "+",
-                "value": 0.07
-            },
-            {
                 "stat": "bulletDamage",
                 "modifier": "+",
-                "value": 0.08
+                "value": 0.20
+            }
+            {
+                "stat": "spiritPower",
+                "modifier": "+",
+                "value": 8
             }
         ],
         "passives": {},
@@ -660,14 +665,19 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "bulletResist",
-                "modifier": "+",
-                "value": 0.07
-            },
-            {
                 "stat": "bulletDamage",
                 "modifier": "+",
-                "value": 0.08
+                "value": 0.20
+            },
+            {
+                "stat": "bulletLifesteal",
+                "modifier": "+",
+                "value": 0.10
+            },
+            {
+                "stat": "spiritLifesteal",
+                "modifier": "+",
+                "value": 0.10
             }
         ],
         "passives": {},
@@ -681,14 +691,19 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "bulletResist",
+                "stat": "ammo",
                 "modifier": "+",
-                "value": 0.07
+                "value": 12 
             },
             {
                 "stat": "bulletDamage",
                 "modifier": "+",
-                "value": 0.08
+                "value": 0.30
+            },
+            {
+                "stat": "bonusHealth",
+                "modifier": "+",
+                "value": 200 
             }
         ],
         "passives": {},
