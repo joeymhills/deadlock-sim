@@ -42,7 +42,7 @@ export const ItemCardMini: React.FC<ItemComponentProps> = ({ item, toggleItem })
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <img className='p-3 h-16' src={imgName} alt={item.name} style={{ filter: 'invert(100%) brightness(0%)' }}/>
+            <img className='p-2 h-14' src={imgName} alt={item.name} style={{ filter: 'invert(100%) brightness(0%)' }}/>
         
             {/* Popup that appears on hover */}
             {isHovered && (

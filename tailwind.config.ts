@@ -11,6 +11,9 @@ export default {
   },
   theme: {
     extend: {
+      fontSize: {
+        xxs: ['0.6rem', { lineHeight: '0.875rem' }]
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: 0 },

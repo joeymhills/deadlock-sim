@@ -38,15 +38,15 @@ export const ItemCard: React.FC<ItemComponentProps> = ({ item, toggleItem }) => 
       <div 
         ref={cardRef}
         onClick={() => toggleItem(action)} 
-        className={`relative max-w-24 max-h-28 flex flex-col justify-center items-center shadow-xl rounded-md bg-${category.toLowerCase()} hover:cursor-pointer`}
+        className={`relative w-20 flex flex-col justify-center items-center shadow-xl rounded-md bg-${category.toLowerCase()} hover:cursor-pointer`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <img className='p-3 h-16' src={imgName} alt={item.name} style={{ filter: 'invert(100%) brightness(0%)' }}/>
-        <div className="flex justify-center items-center bg-offwhite rounded-b-md text-black w-full">
-          <h1 className='p-1 h-9 font-bold text-center text-xs'>{item.name}</h1>
+        <img className='p-1 h-12' src={imgName} alt={item.name} style={{ filter: 'invert(100%) brightness(0%)' }}/>
+        <div className="flex justify-center items-center bg-offwhite rounded-b-md h-8 text-black w-full">
+          <h1 className='font-bold text-center text-xxs'>{item.name}</h1>
         </div>
-    
+  
         {/* Popup that appears on hover */}
         {isHovered && (
           <div

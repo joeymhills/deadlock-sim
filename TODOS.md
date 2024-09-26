@@ -10,6 +10,9 @@ SIM NOTES:
 - autocast option
 - item components
 - long range uses ammo multiplier
+- need to have a max health stat(most likely just need to just add base and bonus health)
+- need to go back and fix all of the percentage base ammo stuff
+
 
 - use steam api/0auth
 - add abilities + ability points

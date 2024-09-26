@@ -165,7 +165,7 @@
           "value": 0.07
         },
         {
-          "stat": "weaponDamage",
+          "stat": "bulletDamage",
           "modifier": "+",
           "value": 0.08
         }
@@ -181,7 +181,7 @@
       "cost": 1250,
       "modifiers": [
         {
-          "stat": "weaponDamage",
+          "stat": "bulletDamage",
           "modifier": "+",
           "value": 0.10
         },
@@ -647,7 +647,7 @@
                 "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.20
-            }
+            },
             {
                 "stat": "spiritPower",
                 "modifier": "+",
@@ -717,14 +717,19 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "bulletResist",
-                "modifier": "+",
-                "value": 0.07
-            },
-            {
                 "stat": "bulletDamage",
                 "modifier": "+",
-                "value": 0.08
+                "value": 0.70
+            },
+            {
+                "stat": "bulletsPerSec",
+                "modifier": "+",
+                "value": 0.10
+            },
+            {
+                "stat": "moveSpeed",
+                "modifier": "+",
+                "value": 1
             }
         ],
         "passives": {},
@@ -737,11 +742,6 @@
         "tier": 4,
         "cost": 6300,
         "modifiers": [
-            {
-                "stat": "bulletResist",
-                "modifier": "+",
-                "value": 0.07
-            },
             {
                 "stat": "bulletDamage",
                 "modifier": "+",
@@ -759,14 +759,14 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "bulletResist",
+                "stat": "bulletsPerSec",
                 "modifier": "+",
-                "value": 0.07
+                "value": 0.14
             },
             {
-                "stat": "bulletDamage",
+                "stat": "bonusHealth",
                 "modifier": "+",
-                "value": 0.08
+                "value": 150
             }
         ],
         "passives": {},
@@ -780,14 +780,9 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "bulletResist",
-                "modifier": "+",
-                "value": 0.07
-            },
-            {
                 "stat": "bulletDamage",
                 "modifier": "+",
-                "value": 0.08
+                "value": 0.28
             }
         ],
         "passives": {},
@@ -801,21 +796,72 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "bulletResist",
+                "stat": "bulletsPerSec",
                 "modifier": "+",
-                "value": 0.07
+                "value": 0.20
             },
             {
-                "stat": "bulletDamage",
+                "stat": "cooldownReduction",
                 "modifier": "+",
-                "value": 0.08
+                "value": 0.15
+            },
+            {
+                "stat": "bulletLifesteal",
+                "modifier": "+",
+                "value": 0.10
+            },
+            {
+                "stat": "spiritLifesteal",
+                "modifier": "+",
+                "value": 0.10
             }
         ],
         "passives": {},
         "actives": {},
         "debuffs": {}
     },
-
+    "Silencer": {
+        "name": "Silencer",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 7550,
+        "modifiers": [
+            {
+                "stat": "bulletDamage",
+                "modifier": "+",
+                "value": 0.15
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
+    "Vampiric Burst": {
+        "name": "Vampiric Burst",
+        "category": "Weapon",
+        "tier": 4,
+        "cost": 6300,
+        "modifiers": [
+            {
+                "stat": "moveSpeed",
+                "modifier": "+",
+                "value": 2 
+            },
+            {
+                "stat": "bulletDamage",
+                "modifier": "+",
+                "value": 0.25
+            },
+            {
+                "stat": "bonusHealth",
+                "modifier": "+",
+                "value": 150 
+            }
+        ],
+        "passives": {},
+        "actives": {},
+        "debuffs": {}
+    },
 
     "Enduring Spirit": {
         "name": "Enduring Spirit",
@@ -850,7 +896,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -872,7 +918,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -893,7 +939,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -914,7 +960,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -935,7 +981,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -956,7 +1002,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -978,7 +1024,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1000,7 +1046,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1021,7 +1067,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1042,7 +1088,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1063,7 +1109,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1084,7 +1130,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1105,7 +1151,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1126,7 +1172,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1147,7 +1193,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1168,7 +1214,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1189,7 +1235,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1210,7 +1256,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1231,7 +1277,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1252,7 +1298,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1273,7 +1319,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1294,7 +1340,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1315,7 +1361,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1336,7 +1382,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1357,7 +1403,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1378,7 +1424,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1399,7 +1445,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1420,7 +1466,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1441,7 +1487,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1462,7 +1508,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1483,7 +1529,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1504,7 +1550,7 @@
         "cost": 3000,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1525,7 +1571,7 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1546,7 +1592,7 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1568,7 +1614,7 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1590,7 +1636,7 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1612,7 +1658,7 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1634,7 +1680,7 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1656,7 +1702,7 @@
         "cost": 6300,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1678,7 +1724,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1699,7 +1745,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1720,7 +1766,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1741,7 +1787,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1762,7 +1808,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1783,7 +1829,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1804,7 +1850,7 @@
         "cost": 500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1825,7 +1871,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1846,7 +1892,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1867,7 +1913,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1888,7 +1934,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1909,7 +1955,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1930,7 +1976,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1951,7 +1997,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1972,7 +2018,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -1993,7 +2039,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2014,7 +2060,7 @@
         "cost": 1250,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2035,7 +2081,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2056,7 +2102,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2077,7 +2123,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2098,7 +2144,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2119,7 +2165,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2140,7 +2186,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2161,7 +2207,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2182,7 +2228,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2203,7 +2249,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2224,7 +2270,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2245,7 +2291,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2266,7 +2312,7 @@
         "cost": 3500,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2287,7 +2333,7 @@
         "cost": 9800,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2308,7 +2354,7 @@
         "cost": 9800,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2329,7 +2375,7 @@
         "cost": 9800,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2350,7 +2396,7 @@
         "cost": 9800,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2371,7 +2417,7 @@
         "cost": 9800,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2392,7 +2438,7 @@
         "cost": 9800,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2413,7 +2459,7 @@
         "cost": 9800,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },
@@ -2434,7 +2480,7 @@
         "cost": 9800,
         "modifiers": [
             {
-                "stat": "weaponDamage",
+                "stat": "bulletDamage",
                 "modifier": "+",
                 "value": 0.05
             },

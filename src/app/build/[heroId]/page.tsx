@@ -9,7 +9,7 @@ import { Action, HeroAttributes, HeroAttributesMap, Item, ItemMap, DamageType, S
 import { Hero } from "~/app/lib/Hero";
 import { useEffect, useState, useReducer, useRef } from "react";
 import { getImageName } from "~/utils";
-import { saveBuild } from "~/app/lib/Builds";
+import { getSavedBuilds, loadBuild, saveBuild } from "~/app/lib/Builds";
 
 const StatBox: React.FC<{ name: string; value: number; icon: string }> = ({ name, value, icon }) => {
   return (
@@ -161,6 +161,16 @@ export default function Page({ params }: { params: { heroId: string } }) {
   let heroName = decodeURIComponent(params.heroId);
   const heroes: HeroAttributesMap = heroData;
 
+
+
+  const buildNames: string[] = getSavedBuilds() as string[];
+  
+  const [heroList, setHeroList] = useState<Hero[]>([]);
+
+  const addBuild = (buildName: string) => {
+      setHeroList((heroList) => [...heroList, new Hero(loadBuild(buildName))])
+  }
+
   //TODO: Take another look at this
   const baseStats = heroes[heroName] ? new Hero(heroes[heroName]) : new Hero(); // Use Hero constructor
 
@@ -195,8 +205,8 @@ export default function Page({ params }: { params: { heroId: string } }) {
       {/* Container */}
       <div className="flex flex-row justify-start items-start gap-2 pt-16 animate-fadeIn">
           {/* Hero Attributes */}
-          <div className="flex flex-col gap-3 w-40">
-            <div className="w-full flex flex-col self-start items-center rounded-md bg-dark justify-center gap-4 p-2">
+          <div className="flex flex-col gap-2 w-40">
+            <div className="w-full flex flex-col self-start items-center rounded-md bg-dark justify-center gap-1 p-1">
               <div>
                 <img className="h-44 rounded-md" src={`/heroCards/${getImageName(hero.name)}`} />
               </div>
@@ -233,24 +243,24 @@ export default function Page({ params }: { params: { heroId: string } }) {
             {/* Category Tabs */}
             <div className={`flex w-full bg-${activeCategory}-bg-1 rounded-t-xl justify-center pt-1 gap-3`}>
               <div onClick={() => setActiveCategory("weapon")}
-                className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-10 w-32 rounded-md bg-weapon hover:shadow-lg hover:cursor-pointer">
+                className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-8 w-32 rounded-md bg-weapon hover:shadow-lg hover:cursor-pointer">
                 <img className="w-5" src="/Weapon.png"></img>
                 Weapon
               </div>
               <div onClick={() => setActiveCategory("vitality")}
-                className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-10 w-32 rounded-md hover:shadow-lg bg-vitality hover:cursor-pointer">
+                className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-8 w-32 rounded-md hover:shadow-lg bg-vitality hover:cursor-pointer">
                 <img className="w-5" src="/Vitality.png"></img>
                 Vitality
               </div>
               <div onClick={() => setActiveCategory("spirit")}
-                className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-10 w-32 rounded-md hover:shadow-lg bg-spirit hover:cursor-pointer">
+                className="flex font-bold text-black py-1 px-3 gap-1 justify-center items-center h-8 w-32 rounded-md hover:shadow-lg bg-spirit hover:cursor-pointer">
                 <img className="w-5" src="/Spirit.png"></img>
                 Spirit
               </div>
             </div>
 
             {/* Tier 1 */} 
-            <div className={`grid grid-cols-9 p-2 bg-${activeCategory}-bg-1 gap-2`}>
+            <div className={`grid grid-cols-10 p-2 bg-${activeCategory}-bg-1 gap-2`}>
               <div className='flex flex-row justify-center items-center row-span-2 font-bold text-souls -rotate-90 gap-2'><img className='h-5' src="/souls.png"></img>500</div>
                 {items && Object.entries(items).map(([key, item]) => {
                   if (item.tier === 1 && item.category.toLowerCase() == activeCategory) {
@@ -267,7 +277,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
             </div>
             
             {/* Tier 2 */} 
-            <div className={`grid grid-cols-9 p-2 bg-${activeCategory}-bg-2 gap-2`}>
+            <div className={`grid grid-cols-10 p-2 bg-${activeCategory}-bg-2 gap-2`}>
             <div className='flex flex-row justify-center items-center row-span-2 font-bold gap-2 text-souls -rotate-90 gap-2'><img className='h-5' src="/souls.png"></img>1,250+</div>
               {items && Object.entries(items).map(([key, item]) => {
                 if (item.tier === 2 && item.category.toLowerCase() == activeCategory) {
@@ -284,7 +294,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
             </div>
 
             {/* Tier 3 */} 
-            <div className={`grid grid-cols-9 p-2 bg-${activeCategory}-bg-1 gap-2`}>
+            <div className={`grid grid-cols-10 p-2 bg-${activeCategory}-bg-1 gap-2`}>
             <div className='flex flex-row justify-center items-center font-bold row-span-2 gap-2 text-souls -rotate-90 gap-2'><img className='h-5' src="/souls.png"></img>3,000+</div>
               {items && Object.entries(items).map(([key, item]) => {
                 if (item.tier === 3 && item.category.toLowerCase() == activeCategory) {
@@ -301,7 +311,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
             </div>
 
             {/* Tier 4 */} 
-            <div className={`grid grid-cols-9 p-2 bg-${activeCategory}-bg-2 gap-2 rounded-b-xl`}>
+            <div className={`grid grid-cols-10 p-2 bg-${activeCategory}-bg-2 gap-2 rounded-b-xl`}>
             <div className='flex flex-row justify-center items-center font-bold gap-2 row-span-2 text-souls -rotate-90 gap-2'><img className='h-5' src="/souls.png"></img>6,300+</div>
               {items && Object.entries(items).map(([key, item]) => {
                 if (item.tier === 4 && item.category.toLowerCase() == activeCategory) {
@@ -342,7 +352,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
               const emptySlotsCount = Math.max(4 - itemCount, 0);
               
               return Array.from({ length: emptySlotsCount }).map((_, i) => (
-                <div key={`empty-${i}`} className="h-16 w-16 bg-black rounded-md" />
+                <div key={`empty-${i}`} className="h-14 w-14 bg-black rounded-md" />
               ));
             })()}
           </div>
@@ -363,7 +373,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
               const emptySlotsCount = Math.max(4 - itemCount, 0);
               
               return Array.from({ length: emptySlotsCount }).map((_, i) => (
-                <div key={`empty-${i}`} className="h-16 w-16 bg-black rounded-md" />
+                <div key={`empty-${i}`} className="h-14 w-14 bg-black rounded-md" />
               ));
             })()}
             </div>
@@ -384,7 +394,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
               const emptySlotsCount = Math.max(4 - itemCount, 0);
               
               return Array.from({ length: emptySlotsCount }).map((_, i) => (
-                <div key={`empty-${i}`} className="h-16 w-16 bg-black rounded-md" />
+                <div key={`empty-${i}`} className="h-14 w-14 bg-black rounded-md" />
               ));
             })()}
             </div>
@@ -405,7 +415,7 @@ export default function Page({ params }: { params: { heroId: string } }) {
               const emptySlotsCount = Math.max(4 - itemCount, 0);
               
               return Array.from({ length: emptySlotsCount }).map((_, i) => (
-                <div key={`empty-${i}`} className="h-16 w-16 bg-black rounded-md" />
+                <div key={`empty-${i}`} className="h-14 w-14 bg-black rounded-md" />
               ));
             })()}
             </div>
